@@ -4,6 +4,8 @@ import { prisma } from "@/lib/prisma";
 import { resend } from "@/lib/resend";
 import { getExpiryDate } from "@/lib/subscription";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request) {
   try {
     const session = await getSession();

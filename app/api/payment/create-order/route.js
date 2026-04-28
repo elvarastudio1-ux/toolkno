@@ -4,6 +4,8 @@ import { prisma } from "@/lib/prisma";
 import { razorpay } from "@/lib/razorpay";
 import { siteConfig } from "@/lib/site";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request) {
   try {
     const session = await getSession();
