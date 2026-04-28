@@ -1,0 +1,5 @@
+﻿sitemap: 200, urls=69
+robots: 200, allows_root=True, sitemap_declared=True
+og: 200, bytes=122623, ctype=image/png
+/tools/character-counter = 200, title_in_html=True, og_image_in_html=True
+/tools/word-counter = 200, title_in_html=True, og_image_in_html=False

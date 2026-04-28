@@ -1,0 +1,37 @@
+import ToolLayout from "@/components/tools/ToolLayout";
+import FreeToolWrapper from "@/components/tools/FreeToolWrapper";
+import ToolInfoSections from "@/components/tools/ToolInfoSections";
+import AdUnit from "@/components/layout/AdUnit";
+import ToolSchemaScripts from "@/components/tools/ToolSchemaScripts";
+import TextSorterAZTool from "@/components/tools/widgets/TextSorterAZTool";
+import { buildToolMetadata, getToolContent } from "@/lib/tools";
+
+export const metadata = buildToolMetadata("text-sorter-a-z");
+
+export default function TextSorterAZPage() {
+  const tool = getToolContent("text-sorter-a-z");
+
+  return (
+    <>
+      <ToolSchemaScripts slug="text-sorter-a-z" />
+      <ToolLayout
+      title={tool.name}
+      description={tool.description}
+      category={tool.categoryLabel}
+      relatedTools={tool.relatedTools}
+    >
+      <FreeToolWrapper>
+        <TextSorterAZTool />
+      </FreeToolWrapper>
+
+      <AdUnit slot="4100011102" />
+
+      <AdUnit slot="4100011103" />
+
+      <ToolInfoSections slug="text-sorter-a-z" />
+
+      <AdUnit slot="4100011104" />
+    </ToolLayout>
+    </>
+  );
+}
