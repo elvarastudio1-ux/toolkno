@@ -1,4 +1,4 @@
-import { tools, categoryMeta } from "@/lib/tools";
+import { getAllCategorySlugs, tools } from "@/lib/tools";
 
 export default function sitemap() {
   const baseUrl = "https://toolkno.com";
@@ -10,7 +10,7 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  const categoryPages = Object.keys(categoryMeta).map((category) => ({
+  const categoryPages = getAllCategorySlugs().map((category) => ({
     url: `${baseUrl}/tools/category/${category}`,
     lastModified: new Date(),
     changeFrequency: "weekly",

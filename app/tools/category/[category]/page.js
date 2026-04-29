@@ -4,12 +4,14 @@ import AdUnit from "@/components/layout/AdUnit";
 import Breadcrumbs from "@/components/tools/Breadcrumbs";
 import ToolCard from "@/components/tools/ToolCard";
 import { buildMetadata } from "@/lib/metadata";
-import { categoryMeta, getToolsByCategory, tools } from "@/lib/tools";
+import { categoryMeta, getAllCategorySlugs, getToolsByCategory, tools } from "@/lib/tools";
 import { siteConfig } from "@/lib/site";
 
 export function generateStaticParams() {
-  return Object.keys(categoryMeta).map((category) => ({ category }));
+  return getAllCategorySlugs().map((category) => ({ category }));
 }
+
+export const dynamicParams = false;
 
 export function generateMetadata({ params }) {
   const meta = categoryMeta[params.category];
