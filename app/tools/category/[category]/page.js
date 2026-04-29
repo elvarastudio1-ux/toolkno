@@ -7,10 +7,15 @@ import { buildMetadata } from "@/lib/metadata";
 import { categoryMeta, getAllCategorySlugs, getToolsByCategory } from "@/lib/tools";
 import { siteConfig } from "@/lib/site";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
-  return getAllCategorySlugs().map((category) => ({ category }));
+  const categories = getAllCategorySlugs();
+  console.log("Generating categories:", categories);
+
+  return categories.map((category) => ({
+    category: String(category)
+  }));
 }
 
 function getFallbackMeta(category) {
@@ -27,34 +32,46 @@ function getFallbackMeta(category) {
   };
 }
 
-export function generateMetadata({ params }) {
-  const categoryTools = getToolsByCategory(params.category);
+export async function generateMetadata({ params }) {
+  const resolvedParams = await Promise.resolve(params);
+  console.log("Params:", resolvedParams);
+  const category = Array.isArray(resolvedParams?.category)
+    ? resolvedParams.category[0]
+    : resolvedParams?.category || "";
+  const categoryTools = getToolsByCategory(category);
   if (!categoryTools.length) {
     return buildMetadata({
       title: "Category not found",
       description: "Browse the full Toolkno tool directory.",
-      path: `/tools/category/${params.category}`,
+      path: `/tools/category/${category}`,
       noIndex: true
     });
   }
 
-  const meta = categoryMeta[params.category] || getFallbackMeta(params.category);
+  const meta = categoryMeta[category] || getFallbackMeta(category);
   const count = categoryTools.length;
 
   return buildMetadata({
     title: `${meta.headline} - ${count} free tools | Toolkno`,
     description: `${meta.tagline} ${count} free tools that work in your browser, no signup required.`,
-    path: `/tools/category/${params.category}`
+    path: `/tools/category/${category}`
   });
 }
 
-export default function CategoryPage({ params }) {
-  const categoryTools = getToolsByCategory(params.category);
-  if (!categoryTools.length) notFound();
+export default async function CategoryPage({ params }) {
+  const resolvedParams = await Promise.resolve(params);
+  console.log("Params:", resolvedParams);
+  const category = Array.isArray(resolvedParams?.category)
+    ? resolvedParams.category[0]
+    : resolvedParams?.category || "";
+  const categoryTools = getToolsByCategory(category);
+  if (!categoryTools.length) {
+    notFound();
+  }
 
-  const meta = categoryMeta[params.category] || getFallbackMeta(params.category);
+  const meta = categoryMeta[category] || getFallbackMeta(category);
   const otherCategories = Object.entries(categoryMeta)
-    .filter(([key]) => key !== params.category)
+    .filter(([key]) => key !== category)
     .slice(0, 6);
 
   const breadcrumbItems = [
