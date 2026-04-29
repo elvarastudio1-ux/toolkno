@@ -7,11 +7,11 @@ import { buildMetadata } from "@/lib/metadata";
 import { categoryMeta, getAllCategorySlugs, getToolsByCategory, tools } from "@/lib/tools";
 import { siteConfig } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return getAllCategorySlugs().map((category) => ({ category }));
 }
-
-export const dynamicParams = false;
 
 export function generateMetadata({ params }) {
   const meta = categoryMeta[params.category];
