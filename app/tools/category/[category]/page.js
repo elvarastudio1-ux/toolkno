@@ -4,7 +4,7 @@ import AdUnit from "@/components/layout/AdUnit";
 import Breadcrumbs from "@/components/tools/Breadcrumbs";
 import ToolCard from "@/components/tools/ToolCard";
 import { buildMetadata } from "@/lib/metadata";
-import { categoryMeta, getAllCategorySlugs, getToolsByCategory, tools } from "@/lib/tools";
+import { categoryMeta, getAllCategorySlugs, getToolsByCategory } from "@/lib/tools";
 import { siteConfig } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -13,9 +13,23 @@ export function generateStaticParams() {
   return getAllCategorySlugs().map((category) => ({ category }));
 }
 
+function getFallbackMeta(category) {
+  const fallbackLabel = category
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+
+  return {
+    label: fallbackLabel,
+    headline: `${fallbackLabel} tools`,
+    tagline: `Browse ${fallbackLabel.toLowerCase()} tools on Toolkno.`,
+    intro: `Explore free ${fallbackLabel.toLowerCase()} tools that work directly in your browser.`
+  };
+}
+
 export function generateMetadata({ params }) {
-  const meta = categoryMeta[params.category];
-  if (!meta) {
+  const categoryTools = getToolsByCategory(params.category);
+  if (!categoryTools.length) {
     return buildMetadata({
       title: "Category not found",
       description: "Browse the full Toolkno tool directory.",
@@ -23,19 +37,22 @@ export function generateMetadata({ params }) {
       noIndex: true
     });
   }
-  const count = getToolsByCategory(params.category).length;
+
+  const meta = categoryMeta[params.category] || getFallbackMeta(params.category);
+  const count = categoryTools.length;
+
   return buildMetadata({
-    title: `${meta.headline} — ${count} free tools | Toolkno`,
+    title: `${meta.headline} - ${count} free tools | Toolkno`,
     description: `${meta.tagline} ${count} free tools that work in your browser, no signup required.`,
     path: `/tools/category/${params.category}`
   });
 }
 
 export default function CategoryPage({ params }) {
-  const meta = categoryMeta[params.category];
-  if (!meta) notFound();
-
   const categoryTools = getToolsByCategory(params.category);
+  if (!categoryTools.length) notFound();
+
+  const meta = categoryMeta[params.category] || getFallbackMeta(params.category);
   const otherCategories = Object.entries(categoryMeta)
     .filter(([key]) => key !== params.category)
     .slice(0, 6);
@@ -71,9 +88,9 @@ export default function CategoryPage({ params }) {
         <p className="mt-5 max-w-3xl text-sm leading-7 text-muted">{meta.intro}</p>
         <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-500">
           <span><strong className="text-slate-700">{categoryTools.length}</strong> tools in this category</span>
-          <span>· Free forever</span>
-          <span>· No signup</span>
-          <span>· Works in your browser</span>
+          <span>- Free forever</span>
+          <span>- No signup</span>
+          <span>- Works in your browser</span>
         </div>
       </section>
 
@@ -103,13 +120,13 @@ export default function CategoryPage({ params }) {
                 <p className="text-sm font-semibold text-slate-900">{value.label}</p>
                 <p className="mt-1 text-xs leading-5 text-slate-500">{value.tagline}</p>
               </div>
-              <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.18em] text-sky-500 transition group-hover:translate-x-1">Open →</span>
+              <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.18em] text-sky-500 transition group-hover:translate-x-1">Open -&gt;</span>
             </Link>
           ))}
         </div>
         <div className="mt-6">
           <Link href="/tools" className="text-sm font-semibold text-accent">
-            See all 60 tools →
+            See all 60 tools -&gt;
           </Link>
         </div>
       </section>
