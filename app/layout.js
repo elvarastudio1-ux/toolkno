@@ -20,11 +20,16 @@ const dmSans = DM_Sans({
   display: "swap"
 });
 
-export const metadata = buildMetadata({
-  title: "Free Online Tools for Text, SEO, and Developer Workflows",
-  description:
-    "Toolkno helps you count words, format JSON, generate slugs, clean lists, and use fast online utilities built for marketers, writers, and developers."
-});
+export const metadata = {
+  ...buildMetadata({
+    title: "Free Online Tools for Text, SEO, and Developer Workflows",
+    description:
+      "Toolkno offers 60+ free browser-based text tools — count words, convert case, clean lists, compare text, analyze readability, and more. No signup, instant results."
+  }),
+  other: {
+    "google-adsense-account": "ca-pub-8193881104320445"
+  }
+};
 
 export default function RootLayout({ children }) {
   return (

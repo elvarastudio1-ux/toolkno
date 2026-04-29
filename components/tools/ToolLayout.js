@@ -1,28 +1,22 @@
 import Link from "next/link";
 import Badge from "@/components/ui/Badge";
+import Breadcrumbs from "@/components/tools/Breadcrumbs";
 import { siteConfig } from "@/lib/site";
 import { getRelatedTools } from "@/lib/tools";
 
 export default function ToolLayout({ title, description, category, relatedTools = [], children }) {
   const resolvedRelatedTools = getRelatedTools(relatedTools);
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: `${title} - Toolkno`,
-    applicationCategory: "UtilitiesApplication",
-    operatingSystem: "Web",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "INR"
-    },
-    description,
-    url: `${siteConfig.url}`
-  };
+
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Tools", href: "/tools" },
+    { label: title }
+  ];
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <section className="rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
+      <Breadcrumbs items={breadcrumbItems} />
+      <section className="mt-4 rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
         <div className="flex flex-wrap items-center gap-3">
           <Badge tone="accent">FREE</Badge>
           {category ? <Badge>{category}</Badge> : null}
@@ -34,21 +28,24 @@ export default function ToolLayout({ title, description, category, relatedTools 
       <section className="mt-0">{children}</section>
 
       <section className="mt-10 rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
-        <h2 className="font-heading text-3xl font-bold text-text">Related tools</h2>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <h2 className="font-heading text-3xl font-bold text-text">Related tools you might like</h2>
+        <p className="mt-2 text-sm text-muted">Hand-picked tools that pair well with this one.</p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {resolvedRelatedTools.map((relatedTool) => (
             <Link
               key={relatedTool.slug}
               href={`/tools/${relatedTool.slug}`}
-              className="rounded-full border border-slate-200 px-4 py-2 text-sm text-text transition hover:border-accent hover:text-accent"
+              className="group flex items-start justify-between gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-sky-400"
             >
-              {relatedTool.name}
+              <div>
+                <p className="text-sm font-semibold text-slate-900">{relatedTool.name}</p>
+                <p className="mt-1 text-xs leading-5 text-slate-500">{relatedTool.description}</p>
+              </div>
+              <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.18em] text-sky-500 transition group-hover:translate-x-1">Open →</span>
             </Link>
           ))}
         </div>
       </section>
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </main>
   );
 }

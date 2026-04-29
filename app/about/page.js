@@ -12,41 +12,49 @@ export default function AboutPage() {
     <LegalPageLayout
       eyebrow="About Toolkno"
       title="About Toolkno"
-      intro="Toolkno is an online platform designed to provide fast, simple, and browser-based tools that help users complete everyday digital tasks with ease. Our goal is to make useful tools accessible to everyone without requiring downloads, sign-ups, or complicated workflows."
+      intro="Toolkno is a free toolbox of 60+ small, fast text tools that run entirely in your browser. We started Toolkno because we kept opening five tabs every time we wanted to count words, dedupe a list, fix casing, or compare two drafts. So we built one place that does the boring stuff in one click — no signup, no uploads, no tracking of what you paste."
       sections={[
         {
-          heading: "What Toolkno Does",
-          subheading: "Browser-Based Tools",
+          heading: "What Toolkno does",
+          subheading: "60+ free text tools",
           body: [
-            "Toolkno offers a growing collection of tools that run directly in your browser using modern web technologies. This ensures speed, privacy, and ease of use.",
-            "Most tools on Toolkno work instantly without requiring user accounts or file uploads."
+            "Counters, case converters, cleaners, sorters, splitters, generators, analyzers, and developer encoders — all on one site.",
+            "Every tool runs client-side. Your text never leaves your device, which means it's safe to paste private notes, draft emails, or work-in-progress writing."
           ]
         },
         {
-          heading: "Our Focus",
-          subheading: "Productivity and Utility",
+          heading: "Who Toolkno is for",
+          subheading: "Writers, marketers, students, and developers",
           body: [
-            "We focus on building tools that solve real problems such as text processing, formatting, calculations, and data handling.",
-            "Toolkno is designed with privacy in mind. Tool processing happens locally in your browser whenever possible."
+            "Writers who need a quick word count or a clean title-case headline.",
+            "SEO and marketing folks tightening meta descriptions and tweet copy.",
+            "Students hitting essay minimums or cleaning up notes.",
+            "Developers checking string formats, encoding, and quick text transforms."
           ]
         },
         {
-          heading: "How Toolkno Is Built",
-          subheading: "Client-Side Technology",
+          heading: "How Toolkno is built",
+          subheading: "Client-side, privacy-first",
           body: [
-            "Our tools primarily use client-side technologies such as HTML, CSS, and JavaScript to ensure fast performance and scalability.",
-            "We continuously add new tools and improve existing ones based on usability and performance."
+            "The site runs on Next.js and React, deployed on a global CDN. Tools execute in your browser using JavaScript — no input is sent to a server.",
+            "We don't store the text you paste. We use Google Analytics and Google AdSense, both of which are described in our Privacy Policy."
           ]
         },
         {
-          heading: "Our Vision",
-          subheading: "A Unified Tool Platform",
-          body: ["Toolkno aims to become a comprehensive utility platform offering a wide range of tools across multiple categories, all accessible from a single place."]
+          heading: "How we keep it free",
+          subheading: "Honest, non-intrusive ads",
+          body: [
+            "Toolkno is free because of Google AdSense. Ads sit in clearly marked spots and never appear inside the tool input or output area.",
+            "If you want an ad-free experience, we offer an optional paid plan — but every tool stays free for everyone."
+          ]
         },
         {
-          heading: "Contact Information",
-          subheading: "Get in Touch",
-          body: ["If you have feedback, suggestions, or questions about Toolkno, feel free to contact us at support@toolkno.com."]
+          heading: "Contact",
+          subheading: "Get in touch",
+          body: [
+            "Bugs, feature requests, partnerships, or just feedback — email us at support@toolkno.com.",
+            "We aim to reply within 2 business days."
+          ]
         }
       ]}
     />
