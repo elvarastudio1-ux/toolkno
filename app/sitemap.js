@@ -1,18 +1,23 @@
 import { getAllCategorySlugs, tools } from "@/lib/tools";
 
+// Stable dates — update SITE_UPDATED whenever content meaningfully changes.
+// Using new Date() here would report every page as modified today on every request.
+const SITE_UPDATED = new Date("2026-06-25");
+const LEGAL_UPDATED = new Date("2025-06-01");
+
 export default function sitemap() {
   const baseUrl = "https://toolkno.com";
 
   const toolPages = tools.map((tool) => ({
     url: `${baseUrl}/tools/${tool.slug}`,
-    lastModified: new Date(),
+    lastModified: SITE_UPDATED,
     changeFrequency: "weekly",
     priority: 0.8,
   }));
 
   const categoryPages = getAllCategorySlugs().map((category) => ({
     url: `${baseUrl}/tools/category/${category}`,
-    lastModified: new Date(),
+    lastModified: SITE_UPDATED,
     changeFrequency: "weekly",
     priority: 0.7,
   }));
@@ -20,55 +25,55 @@ export default function sitemap() {
   const staticPages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "daily",
       priority: 1.0,
     },
     {
       url: `${baseUrl}/tools`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.4,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: SITE_UPDATED,
       changeFrequency: "monthly",
       priority: 0.4,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: LEGAL_UPDATED,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-and-conditions`,
-      lastModified: new Date(),
+      lastModified: LEGAL_UPDATED,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/disclaimer`,
-      lastModified: new Date(),
+      lastModified: LEGAL_UPDATED,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/dmca`,
-      lastModified: new Date(),
+      lastModified: LEGAL_UPDATED,
       changeFrequency: "yearly",
       priority: 0.3,
     },

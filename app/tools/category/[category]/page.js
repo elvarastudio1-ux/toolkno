@@ -7,8 +7,6 @@ import { buildMetadata } from "@/lib/metadata";
 import { categoryMeta, getAllCategorySlugs, getToolsByCategory } from "@/lib/tools";
 import { siteConfig } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
-
 export function generateStaticParams() {
   const categories = getAllCategorySlugs();
   console.log("Generating categories:", categories);
