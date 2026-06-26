@@ -22,6 +22,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   payments      Payment[]
+  reviews       Review[]
 }
 
 model Payment {
@@ -134,43 +135,43 @@ model RateLimitEntry {
 }
 
 model NewsletterIssue {
-  id           String        @id @default(cuid())
-  issueNumber  Int           @unique @default(autoincrement())
-  slug         String        @unique
+  id           String       @id @default(cuid())
+  issueNumber  Int          @unique @default(autoincrement())
+  slug         String       @unique
   subject      String
   preheader    String?
-  htmlContent  String        @db.Text
-  textContent  String        @db.Text
-  status       IssueStatus   @default(draft)
-  audienceType AudienceType  @default(all_confirmed)
+  htmlContent  String       @db.Text
+  textContent  String       @db.Text
+  status       IssueStatus  @default(draft)
+  audienceType AudienceType @default(all_confirmed)
   scheduledAt  DateTime?
   sentAt       DateTime?
-  sentCount    Int           @default(0)
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  sentCount    Int          @default(0)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
 
   sends NewsletterSend[]
 }
 
 model NewsletterSend {
-  id              String           @id @default(cuid())
+  id              String          @id @default(cuid())
   issueId         String
-  issue           NewsletterIssue  @relation(fields: [issueId], references: [id], onDelete: Cascade)
+  issue           NewsletterIssue @relation(fields: [issueId], references: [id], onDelete: Cascade)
   subscriberId    String
-  subscriber      Subscriber       @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+  subscriber      Subscriber      @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
   emailSnapshot   String
-  status          SendStatus       @default(pending)
+  status          SendStatus      @default(pending)
   resendMessageId String?
   sentAt          DateTime?
   openedAt        DateTime?
   lastOpenedAt    DateTime?
-  openCount       Int              @default(0)
+  openCount       Int             @default(0)
   clickedAt       DateTime?
   bouncedAt       DateTime?
   complainedAt    DateTime?
   failedAt        DateTime?
   failureReason   String?
-  createdAt       DateTime         @default(now())
+  createdAt       DateTime        @default(now())
 
   clicks NewsletterClick[]
 
@@ -192,6 +193,89 @@ model NewsletterClick {
 
   @@index([sendId])
   @@index([url])
+}
+
+// ─── Review models (PRD-003) ──────────────────────────────────────────────────
+
+model Review {
+  id     String       @id @default(cuid())
+  slug   String       @unique
+  status ReviewStatus @default(draft)
+
+  // Product identity (full software entity is PRD-006)
+  productName     String
+  productVendor   String?
+  productCategory String
+
+  // The nine mandated editorial sections (Editorial Standards §4) — discrete
+  // structured fields, never a single HTML/Markdown blob (PRD-003 §8).
+  verdict         String @db.Text // §4.1 — above the fold (verdict-first)
+  whoFor          String @db.Text // §4.2
+  testingSummary  String @db.Text // §4.3
+  whatWorks       String @db.Text // §4.4
+  whatDoesntWork  String @db.Text // §4.5 — mandatory, non-empty
+  pricingNotes    String @db.Text // §4.6
+  verdictExpanded String @db.Text // §4.8
+  // §4.7 Alternatives → ReviewAlternative[]; §4.9 Update history → ReviewUpdate[]
+
+  excerpt String // card/index/homepage/meta summary
+
+  // Testing metadata (Editorial Standards §1; Constitution Rule 1)
+  testingStartedAt  DateTime
+  testingEndedAt    DateTime
+  accountTierTested String?
+  pricingVerifiedAt DateTime? // Editorial Standards §9
+
+  // ToolKno Score — stored only, NEVER displayed in this PRD.
+  // Algorithm/weighting/display deferred to PRD-007 (PRD-003 FR-010, NG-001).
+  score Int?
+
+  // Affiliate disclosure (Constitution Rule 2; affiliate registry is source of truth)
+  isAffiliate Boolean @default(false)
+
+  // SEO overrides (else derived per PRD-003 §12)
+  metaTitle       String?
+  metaDescription String?
+
+  // Optional author linkage (author profiles are PRD-013)
+  authorId String?
+  author   User?   @relation(fields: [authorId], references: [id])
+
+  publishedAt DateTime? // set on first publish; preserved across updates (Rule 8)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  alternatives ReviewAlternative[]
+  updates      ReviewUpdate[]
+
+  @@index([status])
+  @@index([publishedAt])
+  @@index([productCategory])
+}
+
+model ReviewAlternative {
+  id         String  @id @default(cuid())
+  reviewId   String
+  review     Review  @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  name       String
+  whenBetter String  @db.Text // one sentence (Editorial Standards §4.7)
+  linkSlug   String? // slug of a published ToolKno review, when one exists
+  position   Int
+
+  @@index([reviewId])
+}
+
+model ReviewUpdate {
+  id              String           @id @default(cuid())
+  reviewId        String
+  review          Review           @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  date            DateTime         @default(now())
+  type            ReviewUpdateType
+  note            String           @db.Text
+  previousVerdict String? // set for verdict_change (Constitution Rule 8)
+  newVerdict      String?
+
+  @@index([reviewId])
 }
 
 // ─── Enums ────────────────────────────────────────────────────────────────────
@@ -238,4 +322,18 @@ enum SendStatus {
   bounced
   complained
   failed
+}
+
+enum ReviewStatus {
+  draft
+  published
+  archived
+}
+
+enum ReviewUpdateType {
+  correction
+  verdict_change
+  price_update
+  feature_change
+  audit
 }
