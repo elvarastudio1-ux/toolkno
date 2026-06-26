@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { track, EVENTS } from "@/lib/analytics";
 
 export default function EditorialCard({ type, title, summary, publishedAt, href }) {
   return (
     <article className="h-full">
       <Link
         href={href}
+        onClick={() => track(EVENTS.EDITORIAL_CARD_CLICK, { type, href })}
         className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
       >
         <div className="flex items-center justify-between gap-4">

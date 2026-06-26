@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import { DM_Sans, Syne } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AuthSessionProvider from "@/components/providers/SessionProvider";
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
         </AuthSessionProvider>
+        <Analytics />
       </body>
     </html>
   );

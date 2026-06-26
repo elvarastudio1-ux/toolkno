@@ -1,12 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import ToolCard from "@/components/tools/ToolCard";
 import { categories } from "@/lib/tools";
+import { track, EVENTS } from "@/lib/analytics";
 
 export default function ToolExplorer({ tools, initialQuery = "" }) {
   const [query, setQuery] = useState(initialQuery);
   const [activeCategory, setActiveCategory] = useState("All");
+  const searchTimerRef = useRef(null);
 
   const filteredTools = useMemo(() => {
     return tools.filter((tool) => {
@@ -30,7 +32,16 @@ export default function ToolExplorer({ tools, initialQuery = "" }) {
       <input
         id="tool-search"
         value={query}
-        onChange={(event) => setQuery(event.target.value)}
+        onChange={(event) => {
+          const value = event.target.value;
+          setQuery(value);
+          clearTimeout(searchTimerRef.current);
+          if (value.trim()) {
+            searchTimerRef.current = setTimeout(() => {
+              track(EVENTS.TOOL_EXPLORER_SEARCH, { query: value.trim() });
+            }, 500);
+          }
+        }}
         placeholder="Search tools, use cases, or categories"
         className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-sky-400 focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
       />

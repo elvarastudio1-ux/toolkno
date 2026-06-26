@@ -1,9 +1,12 @@
 import Link from "next/link";
 import AdUnit from "@/components/layout/AdUnit";
 import ToolExplorer from "@/components/home/ToolExplorer";
-import ToolCard from "@/components/tools/ToolCard";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import EditorialCard from "@/components/home/EditorialCard";
+import HeroCTAs from "@/components/home/HeroCTAs";
+import FeaturedToolsGrid from "@/components/home/FeaturedToolsGrid";
+import PopularToolsGrid from "@/components/home/PopularToolsGrid";
+import BottomCTABanner from "@/components/home/BottomCTABanner";
 import { buildMetadata } from "@/lib/metadata";
 import { tools, getToolBySlug } from "@/lib/tools";
 import { siteConfig, absoluteUrl } from "@/lib/site";
@@ -94,20 +97,7 @@ export default function HomePage() {
               fast tools that just work — right here in your browser. Your text never leaves your device.
             </p>
           </div>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link
-              href="/tools/word-counter"
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-sky-500 px-5 text-sm font-semibold text-white transition hover:bg-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-            >
-              Try Word Counter — free
-            </Link>
-            <Link
-              href="/tools"
-              className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-sky-500 hover:text-sky-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-            >
-              Browse all 60 tools
-            </Link>
-          </div>
+          <HeroCTAs />
           <div className="mt-10 flex flex-wrap gap-x-12 gap-y-4">
             {[
               ["60+", "Free tools"],
@@ -137,22 +127,7 @@ export default function HomePage() {
             No tour. No signup. Click one and you're working in 2 seconds.
           </p>
         </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {featured.map(({ tool, useCase }) => (
-            <Link
-              key={tool.slug}
-              href={`/tools/${tool.slug}`}
-              className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-            >
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-500">Use case</div>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{useCase}</p>
-              <div className="mt-6 flex items-center justify-between">
-                <span className="font-heading text-lg font-semibold text-slate-900">{tool.name}</span>
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-500 transition group-hover:translate-x-1">Try free →</span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <FeaturedToolsGrid featured={featured} />
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-4 px-4 py-6 sm:px-6 md:grid-cols-3 lg:px-8">
@@ -178,11 +153,7 @@ export default function HomePage() {
             See all 60 →
           </Link>
         </div>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {popular.map((tool) => (
-            <ToolCard key={tool.slug} tool={tool} compact />
-          ))}
-        </div>
+        <PopularToolsGrid popular={popular} />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -277,18 +248,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-5 rounded-2xl bg-sky-500 px-6 py-12 text-center sm:flex-row sm:justify-between sm:px-12 sm:text-left">
-          <div>
-            <h2 className="font-heading text-[22px] font-semibold text-white">Pick a tool. Get back to work.</h2>
-            <p className="mt-1 text-sm text-sky-100">60 free tools. No signup. Your text never leaves your browser.</p>
-          </div>
-          <Link
-            href="/tools"
-            className="inline-flex h-11 items-center justify-center rounded-lg bg-white px-6 text-sm font-semibold text-sky-500 transition hover:bg-sky-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sky-500"
-          >
-            Browse all tools →
-          </Link>
-        </div>
+        <BottomCTABanner />
       </section>
     </main>
   );
