@@ -93,13 +93,13 @@ export default function HomePage() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               href="/tools/word-counter"
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-sky-500 px-5 text-sm font-semibold text-white transition hover:bg-sky-600"
+              className="inline-flex h-11 items-center justify-center rounded-lg bg-sky-500 px-5 text-sm font-semibold text-white transition hover:bg-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
             >
               Try Word Counter — free
             </Link>
             <Link
               href="/tools"
-              className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-sky-500 hover:text-sky-500"
+              className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-sky-500 hover:text-sky-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
             >
               Browse all 60 tools
             </Link>
@@ -136,7 +136,7 @@ export default function HomePage() {
             <Link
               key={tool.slug}
               href={`/tools/${tool.slug}`}
-              className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-sky-400"
+              className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
             >
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-500">Use case</div>
               <p className="mt-2 text-sm leading-6 text-slate-600">{useCase}</p>
@@ -168,7 +168,7 @@ export default function HomePage() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Popular tools</p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-text sm:text-4xl">What people use most</h2>
           </div>
-          <Link href="/tools" className="text-sm font-semibold text-accent">
+          <Link href="/tools" aria-label="See all 60 tools" className="text-sm font-semibold text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2">
             See all 60 →
           </Link>
         </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
                 <Link
                   key={tool.slug}
                   href={`/tools/${tool.slug}`}
-                  className="rounded-full border border-slate-200 px-4 py-2 text-sm text-text transition hover:border-accent hover:text-accent"
+                  className="rounded-full border border-slate-200 px-4 py-2 text-sm text-text transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
                 >
                   {tool.name}
                 </Link>
@@ -240,7 +240,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/tools"
-            className="inline-flex h-11 items-center justify-center rounded-lg bg-white px-6 text-sm font-semibold text-sky-500 transition hover:bg-sky-50"
+            className="inline-flex h-11 items-center justify-center rounded-lg bg-white px-6 text-sm font-semibold text-sky-500 transition hover:bg-sky-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sky-500"
           >
             Browse all tools →
           </Link>
