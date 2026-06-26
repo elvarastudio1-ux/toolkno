@@ -1,0 +1,2396 @@
+﻿{
+    "generatedAt":  "2026-05-13T10:06:21",
+    "projectRoot":  "C:\\Users\\chuwi\\Documents\\Playground\\toolkno",
+    "summary":  {
+                    "totalRegistryTools":  60,
+                    "totalLiveTools":  60,
+                    "totalBrokenTools":  0,
+                    "totalToolRoutes":  60,
+                    "totalWidgetFiles":  60,
+                    "totalBulkTools":  56,
+                    "totalMissingFromLive":  56,
+                    "totalMissingFromBulk":  60,
+                    "totalDuplicateTools":  0,
+                    "orphanRoutes":  0,
+                    "unusedWidgets":  0,
+                    "bulkReferences":  0,
+                    "emptyToolDirs":  0
+                },
+    "registration":  {
+                         "registryFile":  "lib/tools.js",
+                         "listPage":  "app/tools/page.js",
+                         "categoryPage":  "app/tools/category/[category]/page.js",
+                         "routePattern":  "app/tools/\u003cslug\u003e/page.js",
+                         "widgetPattern":  "components/tools/widgets/\u003cName\u003eTool.js",
+                         "widgetRuntime":  "components/tools/widgets/UniversalToolWidget.js",
+                         "staticRegistration":  true,
+                         "dynamicImports":  false,
+                         "configDrivenLoading":  false,
+                         "bulkFolder":  "generated-bulk-tools",
+                         "bulkReferencedInRuntime":  false
+                     },
+    "liveTools":  [
+                      {
+                          "slug":  "word-counter",
+                          "name":  "Word Counter",
+                          "category":  "counters",
+                          "filePath":  "app\\tools\\word-counter\\page.js",
+                          "widgetName":  "WordCounterTool",
+                          "widgetFile":  "components\\tools\\widgets\\WordCounterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "character-counter",
+                          "name":  "Character Counter",
+                          "category":  "counters",
+                          "filePath":  "app\\tools\\character-counter\\page.js",
+                          "widgetName":  "CharacterCounterTool",
+                          "widgetFile":  "components\\tools\\widgets\\CharacterCounterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "sentence-counter",
+                          "name":  "Sentence Counter",
+                          "category":  "counters",
+                          "filePath":  "app\\tools\\sentence-counter\\page.js",
+                          "widgetName":  "SentenceCounterTool",
+                          "widgetFile":  "components\\tools\\widgets\\SentenceCounterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "paragraph-counter",
+                          "name":  "Paragraph Counter",
+                          "category":  "counters",
+                          "filePath":  "app\\tools\\paragraph-counter\\page.js",
+                          "widgetName":  "ParagraphCounterTool",
+                          "widgetFile":  "components\\tools\\widgets\\ParagraphCounterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "case-converter",
+                          "name":  "Case Converter",
+                          "category":  "case",
+                          "filePath":  "app\\tools\\case-converter\\page.js",
+                          "widgetName":  "CaseConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\CaseConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-to-uppercase-converter",
+                          "name":  "Text to Uppercase",
+                          "category":  "case",
+                          "filePath":  "app\\tools\\text-to-uppercase-converter\\page.js",
+                          "widgetName":  "TextToUppercaseConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextToUppercaseConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-to-lowercase-converter",
+                          "name":  "Text to Lowercase",
+                          "category":  "case",
+                          "filePath":  "app\\tools\\text-to-lowercase-converter\\page.js",
+                          "widgetName":  "TextToLowercaseConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextToLowercaseConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "title-case-converter",
+                          "name":  "Title Case Converter",
+                          "category":  "case",
+                          "filePath":  "app\\tools\\title-case-converter\\page.js",
+                          "widgetName":  "TitleCaseConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\TitleCaseConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "sentence-case-converter",
+                          "name":  "Sentence Case Converter",
+                          "category":  "case",
+                          "filePath":  "app\\tools\\sentence-case-converter\\page.js",
+                          "widgetName":  "SentenceCaseConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\SentenceCaseConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "toggle-case-converter",
+                          "name":  "Toggle Case Converter",
+                          "category":  "case",
+                          "filePath":  "app\\tools\\toggle-case-converter\\page.js",
+                          "widgetName":  "ToggleCaseConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\ToggleCaseConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-extra-spaces",
+                          "name":  "Remove Extra Spaces",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-extra-spaces\\page.js",
+                          "widgetName":  "RemoveExtraSpacesTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveExtraSpacesTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-line-breaks",
+                          "name":  "Remove Line Breaks",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-line-breaks\\page.js",
+                          "widgetName":  "RemoveLineBreaksTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveLineBreaksTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-duplicate-lines",
+                          "name":  "Remove Duplicate Lines",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-duplicate-lines\\page.js",
+                          "widgetName":  "RemoveDuplicateLinesTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveDuplicateLinesTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-special-characters",
+                          "name":  "Remove Special Characters",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-special-characters\\page.js",
+                          "widgetName":  "RemoveSpecialCharactersTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveSpecialCharactersTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-numbers-from-text",
+                          "name":  "Remove Numbers from Text",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-numbers-from-text\\page.js",
+                          "widgetName":  "RemoveNumbersFromTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveNumbersFromTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-punctuation",
+                          "name":  "Remove Punctuation",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-punctuation\\page.js",
+                          "widgetName":  "RemovePunctuationTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemovePunctuationTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-emojis",
+                          "name":  "Remove Emojis",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-emojis\\page.js",
+                          "widgetName":  "RemoveEmojisTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveEmojisTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-html-tags",
+                          "name":  "Remove HTML Tags",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-html-tags\\page.js",
+                          "widgetName":  "RemoveHtmlTagsTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveHtmlTagsTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-urls-from-text",
+                          "name":  "Remove URLs from Text",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-urls-from-text\\page.js",
+                          "widgetName":  "RemoveUrlsFromTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveUrlsFromTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-email-addresses-from-text",
+                          "name":  "Remove Email Addresses",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-email-addresses-from-text\\page.js",
+                          "widgetName":  "RemoveEmailAddressesFromTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveEmailAddressesFromTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "remove-accents",
+                          "name":  "Remove Accents",
+                          "category":  "remove",
+                          "filePath":  "app\\tools\\remove-accents\\page.js",
+                          "widgetName":  "RemoveAccentsTool",
+                          "widgetFile":  "components\\tools\\widgets\\RemoveAccentsTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-sorter-a-z",
+                          "name":  "Text Sorter A-Z",
+                          "category":  "sort",
+                          "filePath":  "app\\tools\\text-sorter-a-z\\page.js",
+                          "widgetName":  "TextSorterAZTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextSorterAZTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-sorter-z-a",
+                          "name":  "Text Sorter Z-A",
+                          "category":  "sort",
+                          "filePath":  "app\\tools\\text-sorter-z-a\\page.js",
+                          "widgetName":  "TextSorterZATool",
+                          "widgetFile":  "components\\tools\\widgets\\TextSorterZATool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "reverse-text",
+                          "name":  "Reverse Text",
+                          "category":  "sort",
+                          "filePath":  "app\\tools\\reverse-text\\page.js",
+                          "widgetName":  "ReverseTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\ReverseTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "reverse-words",
+                          "name":  "Reverse Words",
+                          "category":  "sort",
+                          "filePath":  "app\\tools\\reverse-words\\page.js",
+                          "widgetName":  "ReverseWordsTool",
+                          "widgetFile":  "components\\tools\\widgets\\ReverseWordsTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "reverse-lines",
+                          "name":  "Reverse Lines",
+                          "category":  "sort",
+                          "filePath":  "app\\tools\\reverse-lines\\page.js",
+                          "widgetName":  "ReverseLinesTool",
+                          "widgetFile":  "components\\tools\\widgets\\ReverseLinesTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-splitter",
+                          "name":  "Text Splitter",
+                          "category":  "split",
+                          "filePath":  "app\\tools\\text-splitter\\page.js",
+                          "widgetName":  "TextSplitterTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextSplitterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "line-splitter",
+                          "name":  "Line Splitter",
+                          "category":  "split",
+                          "filePath":  "app\\tools\\line-splitter\\page.js",
+                          "widgetName":  "LineSplitterTool",
+                          "widgetFile":  "components\\tools\\widgets\\LineSplitterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "word-splitter",
+                          "name":  "Word Splitter",
+                          "category":  "split",
+                          "filePath":  "app\\tools\\word-splitter\\page.js",
+                          "widgetName":  "WordSplitterTool",
+                          "widgetFile":  "components\\tools\\widgets\\WordSplitterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "paragraph-splitter",
+                          "name":  "Paragraph Splitter",
+                          "category":  "split",
+                          "filePath":  "app\\tools\\paragraph-splitter\\page.js",
+                          "widgetName":  "ParagraphSplitterTool",
+                          "widgetFile":  "components\\tools\\widgets\\ParagraphSplitterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "combine-text-lines",
+                          "name":  "Combine Text Lines",
+                          "category":  "split",
+                          "filePath":  "app\\tools\\combine-text-lines\\page.js",
+                          "widgetName":  "CombineTextLinesTool",
+                          "widgetFile":  "components\\tools\\widgets\\CombineTextLinesTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-joiner",
+                          "name":  "Text Joiner",
+                          "category":  "split",
+                          "filePath":  "app\\tools\\text-joiner\\page.js",
+                          "widgetName":  "TextJoinerTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextJoinerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "lorem-ipsum-generator",
+                          "name":  "Lorem Ipsum Generator",
+                          "category":  "generators",
+                          "filePath":  "app\\tools\\lorem-ipsum-generator\\page.js",
+                          "widgetName":  "LoremIpsumGeneratorTool",
+                          "widgetFile":  "components\\tools\\widgets\\LoremIpsumGeneratorTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "random-word-generator",
+                          "name":  "Random Word Generator",
+                          "category":  "generators",
+                          "filePath":  "app\\tools\\random-word-generator\\page.js",
+                          "widgetName":  "RandomWordGeneratorTool",
+                          "widgetFile":  "components\\tools\\widgets\\RandomWordGeneratorTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "random-sentence-generator",
+                          "name":  "Random Sentence Generator",
+                          "category":  "generators",
+                          "filePath":  "app\\tools\\random-sentence-generator\\page.js",
+                          "widgetName":  "RandomSentenceGeneratorTool",
+                          "widgetFile":  "components\\tools\\widgets\\RandomSentenceGeneratorTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "random-paragraph-generator",
+                          "name":  "Random Paragraph Generator",
+                          "category":  "generators",
+                          "filePath":  "app\\tools\\random-paragraph-generator\\page.js",
+                          "widgetName":  "RandomParagraphGeneratorTool",
+                          "widgetFile":  "components\\tools\\widgets\\RandomParagraphGeneratorTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "prefix-suffix-text-generator",
+                          "name":  "Prefix Suffix Generator",
+                          "category":  "generators",
+                          "filePath":  "app\\tools\\prefix-suffix-text-generator\\page.js",
+                          "widgetName":  "PrefixSuffixTextGeneratorTool",
+                          "widgetFile":  "components\\tools\\widgets\\PrefixSuffixTextGeneratorTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-compare-tool",
+                          "name":  "Text Compare",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\text-compare-tool\\page.js",
+                          "widgetName":  "TextCompareTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextCompareTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-difference-checker",
+                          "name":  "Text Difference Checker",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\text-difference-checker\\page.js",
+                          "widgetName":  "TextDifferenceCheckerTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextDifferenceCheckerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "case-sensitive-compare",
+                          "name":  "Case Sensitive Compare",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\case-sensitive-compare\\page.js",
+                          "widgetName":  "CaseSensitiveCompareTool",
+                          "widgetFile":  "components\\tools\\widgets\\CaseSensitiveCompareTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "case-insensitive-compare",
+                          "name":  "Case Insensitive Compare",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\case-insensitive-compare\\page.js",
+                          "widgetName":  "CaseInsensitiveCompareTool",
+                          "widgetFile":  "components\\tools\\widgets\\CaseInsensitiveCompareTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "keyword-density-checker",
+                          "name":  "Keyword Density Checker",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\keyword-density-checker\\page.js",
+                          "widgetName":  "KeywordDensityCheckerTool",
+                          "widgetFile":  "components\\tools\\widgets\\KeywordDensityCheckerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "stop-word-counter",
+                          "name":  "Stop Word Counter",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\stop-word-counter\\page.js",
+                          "widgetName":  "StopWordCounterTool",
+                          "widgetFile":  "components\\tools\\widgets\\StopWordCounterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "readability-checker",
+                          "name":  "Readability Checker",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\readability-checker\\page.js",
+                          "widgetName":  "ReadabilityCheckerTool",
+                          "widgetFile":  "components\\tools\\widgets\\ReadabilityCheckerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "sentence-analyzer",
+                          "name":  "Sentence Analyzer",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\sentence-analyzer\\page.js",
+                          "widgetName":  "SentenceAnalyzerTool",
+                          "widgetFile":  "components\\tools\\widgets\\SentenceAnalyzerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-complexity-analyzer",
+                          "name":  "Text Complexity Analyzer",
+                          "category":  "analyze",
+                          "filePath":  "app\\tools\\text-complexity-analyzer\\page.js",
+                          "widgetName":  "TextComplexityAnalyzerTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextComplexityAnalyzerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-masking-tool",
+                          "name":  "Text Masking Tool",
+                          "category":  "privacy",
+                          "filePath":  "app\\tools\\text-masking-tool\\page.js",
+                          "widgetName":  "TextMaskingTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextMaskingTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-redaction-tool",
+                          "name":  "Text Redaction Tool",
+                          "category":  "privacy",
+                          "filePath":  "app\\tools\\text-redaction-tool\\page.js",
+                          "widgetName":  "TextRedactionTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextRedactionTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "censor-text-tool",
+                          "name":  "Censor Text Tool",
+                          "category":  "privacy",
+                          "filePath":  "app\\tools\\censor-text-tool\\page.js",
+                          "widgetName":  "CensorTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\CensorTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "normalize-unicode-text",
+                          "name":  "Normalize Unicode Text",
+                          "category":  "privacy",
+                          "filePath":  "app\\tools\\normalize-unicode-text\\page.js",
+                          "widgetName":  "NormalizeUnicodeTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\NormalizeUnicodeTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "find-and-replace-text",
+                          "name":  "Find and Replace",
+                          "category":  "utilities",
+                          "filePath":  "app\\tools\\find-and-replace-text\\page.js",
+                          "widgetName":  "FindAndReplaceTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\FindAndReplaceTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-randomizer",
+                          "name":  "Text Randomizer",
+                          "category":  "utilities",
+                          "filePath":  "app\\tools\\text-randomizer\\page.js",
+                          "widgetName":  "TextRandomizerTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextRandomizerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "shuffle-text-lines",
+                          "name":  "Shuffle Text Lines",
+                          "category":  "utilities",
+                          "filePath":  "app\\tools\\shuffle-text-lines\\page.js",
+                          "widgetName":  "ShuffleTextLinesTool",
+                          "widgetFile":  "components\\tools\\widgets\\ShuffleTextLinesTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-tokenizer",
+                          "name":  "Text Tokenizer",
+                          "category":  "utilities",
+                          "filePath":  "app\\tools\\text-tokenizer\\page.js",
+                          "widgetName":  "TextTokenizerTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextTokenizerTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-validator",
+                          "name":  "Text Validator",
+                          "category":  "utilities",
+                          "filePath":  "app\\tools\\text-validator\\page.js",
+                          "widgetName":  "TextValidatorTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextValidatorTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-to-speech",
+                          "name":  "Text to Speech",
+                          "category":  "audio",
+                          "filePath":  "app\\tools\\text-to-speech\\page.js",
+                          "widgetName":  "TextToSpeechTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextToSpeechTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "speech-to-text",
+                          "name":  "Speech to Text",
+                          "category":  "audio",
+                          "filePath":  "app\\tools\\speech-to-text\\page.js",
+                          "widgetName":  "SpeechToTextTool",
+                          "widgetFile":  "components\\tools\\widgets\\SpeechToTextTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-to-binary-converter",
+                          "name":  "Text to Binary",
+                          "category":  "developer",
+                          "filePath":  "app\\tools\\text-to-binary-converter\\page.js",
+                          "widgetName":  "TextToBinaryConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextToBinaryConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "binary-to-text-converter",
+                          "name":  "Binary to Text",
+                          "category":  "developer",
+                          "filePath":  "app\\tools\\binary-to-text-converter\\page.js",
+                          "widgetName":  "BinaryToTextConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\BinaryToTextConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      },
+                      {
+                          "slug":  "text-to-ascii-converter",
+                          "name":  "Text to ASCII",
+                          "category":  "developer",
+                          "filePath":  "app\\tools\\text-to-ascii-converter\\page.js",
+                          "widgetName":  "TextToAsciiConverterTool",
+                          "widgetFile":  "components\\tools\\widgets\\TextToAsciiConverterTool.js",
+                          "status":  "Live",
+                          "notes":  [
+
+                                    ]
+                      }
+                  ],
+    "bulkTools":  [
+                      {
+                          "slug":  "base64-decoder",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\base64-decoder\\page.js",
+                          "widgetName":  "Base64DecoderTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Base64DecoderTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "base64-encoder",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\base64-encoder\\page.js",
+                          "widgetName":  "Base64EncoderTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Base64EncoderTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "hex-to-rgb-converter",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\hex-to-rgb-converter\\page.js",
+                          "widgetName":  "HexToRgbConverterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\HexToRgbConverterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "json-formatter",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\json-formatter\\page.js",
+                          "widgetName":  "JsonFormatterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\JsonFormatterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "json-minifier",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\json-minifier\\page.js",
+                          "widgetName":  "JsonMinifierTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\JsonMinifierTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "json-validator",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\json-validator\\page.js",
+                          "widgetName":  "JsonValidatorTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\JsonValidatorTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "password-generator",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\password-generator\\page.js",
+                          "widgetName":  "PasswordGeneratorTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\PasswordGeneratorTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "rgb-to-hex-converter",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\rgb-to-hex-converter\\page.js",
+                          "widgetName":  "RgbToHexConverterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\RgbToHexConverterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "roman-numeral-converter",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\roman-numeral-converter\\page.js",
+                          "widgetName":  "RomanNumeralConverterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\RomanNumeralConverterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "sha1-hash-generator",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\sha1-hash-generator\\page.js",
+                          "widgetName":  "Sha1HashGeneratorTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Sha1HashGeneratorTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "sha256-hash-generator",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\sha256-hash-generator\\page.js",
+                          "widgetName":  "Sha256HashGeneratorTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Sha256HashGeneratorTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "unix-timestamp-converter",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\unix-timestamp-converter\\page.js",
+                          "widgetName":  "UnixTimestampConverterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UnixTimestampConverterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "url-decoder",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\url-decoder\\page.js",
+                          "widgetName":  "UrlDecoderTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UrlDecoderTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "url-encoder",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\url-encoder\\page.js",
+                          "widgetName":  "UrlEncoderTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UrlEncoderTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "uuid-generator",
+                          "pageFile":  "generated-bulk-tools\\batch-01\\pages\\uuid-generator\\page.js",
+                          "widgetName":  "UuidGeneratorTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UuidGeneratorTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "ascii-to-text-converter",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\ascii-to-text-converter\\page.js",
+                          "widgetName":  "AsciiToTextConverterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\AsciiToTextConverterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "clean-copied-text",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\clean-copied-text\\page.js",
+                          "widgetName":  "CleanCopiedTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\CleanCopiedTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "hex-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\hex-to-text\\page.js",
+                          "widgetName":  "HexToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\HexToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "morse-code-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\morse-code-to-text\\page.js",
+                          "widgetName":  "MorseCodeToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\MorseCodeToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "octal-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\octal-to-text\\page.js",
+                          "widgetName":  "OctalToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\OctalToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "rot13-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\rot13-to-text\\page.js",
+                          "widgetName":  "Rot13ToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\Rot13ToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "spell-checker",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\spell-checker\\page.js",
+                          "widgetName":  "SpellCheckerTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\SpellCheckerTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-anonymizer",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-anonymizer\\page.js",
+                          "widgetName":  "TextAnonymizerTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextAnonymizerTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-frequency-counter",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-frequency-counter\\page.js",
+                          "widgetName":  "TextFrequencyCounterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextFrequencyCounterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-hex",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-hex\\page.js",
+                          "widgetName":  "TextToHexTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToHexTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-morse-code",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-morse-code\\page.js",
+                          "widgetName":  "TextToMorseCodeTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToMorseCodeTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-octal",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-octal\\page.js",
+                          "widgetName":  "TextToOctalTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToOctalTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-rot13",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-rot13\\page.js",
+                          "widgetName":  "TextToRot13Tool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToRot13Tool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-unicode",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-unicode\\page.js",
+                          "widgetName":  "TextToUnicodeTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToUnicodeTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "unicode-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-02\\pages\\unicode-to-text\\page.js",
+                          "widgetName":  "UnicodeToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\UnicodeToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "csv-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\csv-to-text\\page.js",
+                          "widgetName":  "CsvToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\CsvToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "json-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\json-to-text\\page.js",
+                          "widgetName":  "JsonToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\JsonToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "markdown-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\markdown-to-text\\page.js",
+                          "widgetName":  "MarkdownToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\MarkdownToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-case-identifier",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-case-identifier\\page.js",
+                          "widgetName":  "TextCaseIdentifierTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextCaseIdentifierTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-language-detector",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-language-detector\\page.js",
+                          "widgetName":  "TextLanguageDetectorTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextLanguageDetectorTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-pattern-finder",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-pattern-finder\\page.js",
+                          "widgetName":  "TextPatternFinderTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextPatternFinderTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-regex-tester",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-regex-tester\\page.js",
+                          "widgetName":  "TextRegexTesterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextRegexTesterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-csv",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-csv\\page.js",
+                          "widgetName":  "TextToCsvTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToCsvTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-html",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-html\\page.js",
+                          "widgetName":  "TextToHtmlTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToHtmlTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-json",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-json\\page.js",
+                          "widgetName":  "TextToJsonTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToJsonTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-markdown",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-markdown\\page.js",
+                          "widgetName":  "TextToMarkdownTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToMarkdownTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-xml",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-xml\\page.js",
+                          "widgetName":  "TextToXmlTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToXmlTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-to-yaml",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-yaml\\page.js",
+                          "widgetName":  "TextToYamlTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToYamlTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "xml-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\xml-to-text\\page.js",
+                          "widgetName":  "XmlToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\XmlToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "yaml-to-text",
+                          "pageFile":  "generated-bulk-tools\\batch-03\\pages\\yaml-to-text\\page.js",
+                          "widgetName":  "YamlToTextTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\YamlToTextTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "bulk-case-converter",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-case-converter\\page.js",
+                          "widgetName":  "BulkCaseConverterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkCaseConverterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "bulk-find-and-replace",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-find-and-replace\\page.js",
+                          "widgetName":  "BulkFindAndReplaceTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkFindAndReplaceTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "bulk-text-cleaner",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-text-cleaner\\page.js",
+                          "widgetName":  "BulkTextCleanerTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkTextCleanerTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "bulk-text-formatter",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-text-formatter\\page.js",
+                          "widgetName":  "BulkTextFormatterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkTextFormatterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "bulk-text-splitter",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-text-splitter\\page.js",
+                          "widgetName":  "BulkTextSplitterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkTextSplitterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-indenter",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-indenter\\page.js",
+                          "widgetName":  "TextIndenterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextIndenterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-justifier",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-justifier\\page.js",
+                          "widgetName":  "TextJustifierTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextJustifierTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-line-numbering",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-line-numbering\\page.js",
+                          "widgetName":  "TextLineNumberingTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextLineNumberingTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-outdenter",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-outdenter\\page.js",
+                          "widgetName":  "TextOutdenterTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextOutdenterTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-unwrap",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-unwrap\\page.js",
+                          "widgetName":  "TextUnwrapTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextUnwrapTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      },
+                      {
+                          "slug":  "text-wrap",
+                          "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-wrap\\page.js",
+                          "widgetName":  "TextWrapTool",
+                          "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextWrapTool.js",
+                          "existsLive":  false,
+                          "liveRoute":  ""
+                      }
+                  ],
+    "bulkMissingFromLive":  [
+                                {
+                                    "slug":  "base64-decoder",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\base64-decoder\\page.js",
+                                    "widgetName":  "Base64DecoderTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Base64DecoderTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "base64-encoder",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\base64-encoder\\page.js",
+                                    "widgetName":  "Base64EncoderTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Base64EncoderTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "hex-to-rgb-converter",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\hex-to-rgb-converter\\page.js",
+                                    "widgetName":  "HexToRgbConverterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\HexToRgbConverterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "json-formatter",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\json-formatter\\page.js",
+                                    "widgetName":  "JsonFormatterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\JsonFormatterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "json-minifier",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\json-minifier\\page.js",
+                                    "widgetName":  "JsonMinifierTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\JsonMinifierTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "json-validator",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\json-validator\\page.js",
+                                    "widgetName":  "JsonValidatorTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\JsonValidatorTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "password-generator",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\password-generator\\page.js",
+                                    "widgetName":  "PasswordGeneratorTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\PasswordGeneratorTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "rgb-to-hex-converter",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\rgb-to-hex-converter\\page.js",
+                                    "widgetName":  "RgbToHexConverterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\RgbToHexConverterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "roman-numeral-converter",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\roman-numeral-converter\\page.js",
+                                    "widgetName":  "RomanNumeralConverterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\RomanNumeralConverterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "sha1-hash-generator",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\sha1-hash-generator\\page.js",
+                                    "widgetName":  "Sha1HashGeneratorTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Sha1HashGeneratorTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "sha256-hash-generator",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\sha256-hash-generator\\page.js",
+                                    "widgetName":  "Sha256HashGeneratorTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\Sha256HashGeneratorTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "unix-timestamp-converter",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\unix-timestamp-converter\\page.js",
+                                    "widgetName":  "UnixTimestampConverterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UnixTimestampConverterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "url-decoder",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\url-decoder\\page.js",
+                                    "widgetName":  "UrlDecoderTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UrlDecoderTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "url-encoder",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\url-encoder\\page.js",
+                                    "widgetName":  "UrlEncoderTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UrlEncoderTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "uuid-generator",
+                                    "pageFile":  "generated-bulk-tools\\batch-01\\pages\\uuid-generator\\page.js",
+                                    "widgetName":  "UuidGeneratorTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-01\\widgets\\UuidGeneratorTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "ascii-to-text-converter",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\ascii-to-text-converter\\page.js",
+                                    "widgetName":  "AsciiToTextConverterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\AsciiToTextConverterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "clean-copied-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\clean-copied-text\\page.js",
+                                    "widgetName":  "CleanCopiedTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\CleanCopiedTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "hex-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\hex-to-text\\page.js",
+                                    "widgetName":  "HexToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\HexToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "morse-code-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\morse-code-to-text\\page.js",
+                                    "widgetName":  "MorseCodeToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\MorseCodeToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "octal-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\octal-to-text\\page.js",
+                                    "widgetName":  "OctalToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\OctalToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "rot13-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\rot13-to-text\\page.js",
+                                    "widgetName":  "Rot13ToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\Rot13ToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "spell-checker",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\spell-checker\\page.js",
+                                    "widgetName":  "SpellCheckerTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\SpellCheckerTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-anonymizer",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-anonymizer\\page.js",
+                                    "widgetName":  "TextAnonymizerTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextAnonymizerTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-frequency-counter",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-frequency-counter\\page.js",
+                                    "widgetName":  "TextFrequencyCounterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextFrequencyCounterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-hex",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-hex\\page.js",
+                                    "widgetName":  "TextToHexTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToHexTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-morse-code",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-morse-code\\page.js",
+                                    "widgetName":  "TextToMorseCodeTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToMorseCodeTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-octal",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-octal\\page.js",
+                                    "widgetName":  "TextToOctalTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToOctalTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-rot13",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-rot13\\page.js",
+                                    "widgetName":  "TextToRot13Tool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToRot13Tool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-unicode",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\text-to-unicode\\page.js",
+                                    "widgetName":  "TextToUnicodeTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\TextToUnicodeTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "unicode-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-02\\pages\\unicode-to-text\\page.js",
+                                    "widgetName":  "UnicodeToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-02\\widgets\\UnicodeToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "csv-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\csv-to-text\\page.js",
+                                    "widgetName":  "CsvToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\CsvToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "json-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\json-to-text\\page.js",
+                                    "widgetName":  "JsonToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\JsonToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "markdown-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\markdown-to-text\\page.js",
+                                    "widgetName":  "MarkdownToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\MarkdownToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-case-identifier",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-case-identifier\\page.js",
+                                    "widgetName":  "TextCaseIdentifierTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextCaseIdentifierTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-language-detector",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-language-detector\\page.js",
+                                    "widgetName":  "TextLanguageDetectorTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextLanguageDetectorTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-pattern-finder",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-pattern-finder\\page.js",
+                                    "widgetName":  "TextPatternFinderTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextPatternFinderTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-regex-tester",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-regex-tester\\page.js",
+                                    "widgetName":  "TextRegexTesterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextRegexTesterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-csv",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-csv\\page.js",
+                                    "widgetName":  "TextToCsvTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToCsvTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-html",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-html\\page.js",
+                                    "widgetName":  "TextToHtmlTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToHtmlTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-json",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-json\\page.js",
+                                    "widgetName":  "TextToJsonTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToJsonTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-markdown",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-markdown\\page.js",
+                                    "widgetName":  "TextToMarkdownTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToMarkdownTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-xml",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-xml\\page.js",
+                                    "widgetName":  "TextToXmlTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToXmlTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-to-yaml",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\text-to-yaml\\page.js",
+                                    "widgetName":  "TextToYamlTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\TextToYamlTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "xml-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\xml-to-text\\page.js",
+                                    "widgetName":  "XmlToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\XmlToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "yaml-to-text",
+                                    "pageFile":  "generated-bulk-tools\\batch-03\\pages\\yaml-to-text\\page.js",
+                                    "widgetName":  "YamlToTextTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-03\\widgets\\YamlToTextTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "bulk-case-converter",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-case-converter\\page.js",
+                                    "widgetName":  "BulkCaseConverterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkCaseConverterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "bulk-find-and-replace",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-find-and-replace\\page.js",
+                                    "widgetName":  "BulkFindAndReplaceTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkFindAndReplaceTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "bulk-text-cleaner",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-text-cleaner\\page.js",
+                                    "widgetName":  "BulkTextCleanerTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkTextCleanerTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "bulk-text-formatter",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-text-formatter\\page.js",
+                                    "widgetName":  "BulkTextFormatterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkTextFormatterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "bulk-text-splitter",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\bulk-text-splitter\\page.js",
+                                    "widgetName":  "BulkTextSplitterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\BulkTextSplitterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-indenter",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-indenter\\page.js",
+                                    "widgetName":  "TextIndenterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextIndenterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-justifier",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-justifier\\page.js",
+                                    "widgetName":  "TextJustifierTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextJustifierTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-line-numbering",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-line-numbering\\page.js",
+                                    "widgetName":  "TextLineNumberingTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextLineNumberingTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-outdenter",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-outdenter\\page.js",
+                                    "widgetName":  "TextOutdenterTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextOutdenterTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-unwrap",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-unwrap\\page.js",
+                                    "widgetName":  "TextUnwrapTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextUnwrapTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                },
+                                {
+                                    "slug":  "text-wrap",
+                                    "pageFile":  "generated-bulk-tools\\batch-04\\pages\\text-wrap\\page.js",
+                                    "widgetName":  "TextWrapTool",
+                                    "widgetFile":  "generated-bulk-tools\\batch-04\\widgets\\TextWrapTool.js",
+                                    "existsLive":  false,
+                                    "liveRoute":  ""
+                                }
+                            ],
+    "liveMissingFromBulk":  [
+                                {
+                                    "slug":  "word-counter",
+                                    "name":  "Word Counter",
+                                    "category":  "counters",
+                                    "filePath":  "app\\tools\\word-counter\\page.js",
+                                    "widgetName":  "WordCounterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\WordCounterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "character-counter",
+                                    "name":  "Character Counter",
+                                    "category":  "counters",
+                                    "filePath":  "app\\tools\\character-counter\\page.js",
+                                    "widgetName":  "CharacterCounterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\CharacterCounterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "sentence-counter",
+                                    "name":  "Sentence Counter",
+                                    "category":  "counters",
+                                    "filePath":  "app\\tools\\sentence-counter\\page.js",
+                                    "widgetName":  "SentenceCounterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\SentenceCounterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "paragraph-counter",
+                                    "name":  "Paragraph Counter",
+                                    "category":  "counters",
+                                    "filePath":  "app\\tools\\paragraph-counter\\page.js",
+                                    "widgetName":  "ParagraphCounterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ParagraphCounterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "case-converter",
+                                    "name":  "Case Converter",
+                                    "category":  "case",
+                                    "filePath":  "app\\tools\\case-converter\\page.js",
+                                    "widgetName":  "CaseConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\CaseConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-to-uppercase-converter",
+                                    "name":  "Text to Uppercase",
+                                    "category":  "case",
+                                    "filePath":  "app\\tools\\text-to-uppercase-converter\\page.js",
+                                    "widgetName":  "TextToUppercaseConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextToUppercaseConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-to-lowercase-converter",
+                                    "name":  "Text to Lowercase",
+                                    "category":  "case",
+                                    "filePath":  "app\\tools\\text-to-lowercase-converter\\page.js",
+                                    "widgetName":  "TextToLowercaseConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextToLowercaseConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "title-case-converter",
+                                    "name":  "Title Case Converter",
+                                    "category":  "case",
+                                    "filePath":  "app\\tools\\title-case-converter\\page.js",
+                                    "widgetName":  "TitleCaseConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TitleCaseConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "sentence-case-converter",
+                                    "name":  "Sentence Case Converter",
+                                    "category":  "case",
+                                    "filePath":  "app\\tools\\sentence-case-converter\\page.js",
+                                    "widgetName":  "SentenceCaseConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\SentenceCaseConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "toggle-case-converter",
+                                    "name":  "Toggle Case Converter",
+                                    "category":  "case",
+                                    "filePath":  "app\\tools\\toggle-case-converter\\page.js",
+                                    "widgetName":  "ToggleCaseConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ToggleCaseConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-extra-spaces",
+                                    "name":  "Remove Extra Spaces",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-extra-spaces\\page.js",
+                                    "widgetName":  "RemoveExtraSpacesTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveExtraSpacesTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-line-breaks",
+                                    "name":  "Remove Line Breaks",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-line-breaks\\page.js",
+                                    "widgetName":  "RemoveLineBreaksTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveLineBreaksTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-duplicate-lines",
+                                    "name":  "Remove Duplicate Lines",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-duplicate-lines\\page.js",
+                                    "widgetName":  "RemoveDuplicateLinesTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveDuplicateLinesTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-special-characters",
+                                    "name":  "Remove Special Characters",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-special-characters\\page.js",
+                                    "widgetName":  "RemoveSpecialCharactersTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveSpecialCharactersTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-numbers-from-text",
+                                    "name":  "Remove Numbers from Text",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-numbers-from-text\\page.js",
+                                    "widgetName":  "RemoveNumbersFromTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveNumbersFromTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-punctuation",
+                                    "name":  "Remove Punctuation",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-punctuation\\page.js",
+                                    "widgetName":  "RemovePunctuationTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemovePunctuationTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-emojis",
+                                    "name":  "Remove Emojis",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-emojis\\page.js",
+                                    "widgetName":  "RemoveEmojisTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveEmojisTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-html-tags",
+                                    "name":  "Remove HTML Tags",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-html-tags\\page.js",
+                                    "widgetName":  "RemoveHtmlTagsTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveHtmlTagsTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-urls-from-text",
+                                    "name":  "Remove URLs from Text",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-urls-from-text\\page.js",
+                                    "widgetName":  "RemoveUrlsFromTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveUrlsFromTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-email-addresses-from-text",
+                                    "name":  "Remove Email Addresses",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-email-addresses-from-text\\page.js",
+                                    "widgetName":  "RemoveEmailAddressesFromTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveEmailAddressesFromTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "remove-accents",
+                                    "name":  "Remove Accents",
+                                    "category":  "remove",
+                                    "filePath":  "app\\tools\\remove-accents\\page.js",
+                                    "widgetName":  "RemoveAccentsTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RemoveAccentsTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-sorter-a-z",
+                                    "name":  "Text Sorter A-Z",
+                                    "category":  "sort",
+                                    "filePath":  "app\\tools\\text-sorter-a-z\\page.js",
+                                    "widgetName":  "TextSorterAZTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextSorterAZTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-sorter-z-a",
+                                    "name":  "Text Sorter Z-A",
+                                    "category":  "sort",
+                                    "filePath":  "app\\tools\\text-sorter-z-a\\page.js",
+                                    "widgetName":  "TextSorterZATool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextSorterZATool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "reverse-text",
+                                    "name":  "Reverse Text",
+                                    "category":  "sort",
+                                    "filePath":  "app\\tools\\reverse-text\\page.js",
+                                    "widgetName":  "ReverseTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ReverseTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "reverse-words",
+                                    "name":  "Reverse Words",
+                                    "category":  "sort",
+                                    "filePath":  "app\\tools\\reverse-words\\page.js",
+                                    "widgetName":  "ReverseWordsTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ReverseWordsTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "reverse-lines",
+                                    "name":  "Reverse Lines",
+                                    "category":  "sort",
+                                    "filePath":  "app\\tools\\reverse-lines\\page.js",
+                                    "widgetName":  "ReverseLinesTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ReverseLinesTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-splitter",
+                                    "name":  "Text Splitter",
+                                    "category":  "split",
+                                    "filePath":  "app\\tools\\text-splitter\\page.js",
+                                    "widgetName":  "TextSplitterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextSplitterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "line-splitter",
+                                    "name":  "Line Splitter",
+                                    "category":  "split",
+                                    "filePath":  "app\\tools\\line-splitter\\page.js",
+                                    "widgetName":  "LineSplitterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\LineSplitterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "word-splitter",
+                                    "name":  "Word Splitter",
+                                    "category":  "split",
+                                    "filePath":  "app\\tools\\word-splitter\\page.js",
+                                    "widgetName":  "WordSplitterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\WordSplitterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "paragraph-splitter",
+                                    "name":  "Paragraph Splitter",
+                                    "category":  "split",
+                                    "filePath":  "app\\tools\\paragraph-splitter\\page.js",
+                                    "widgetName":  "ParagraphSplitterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ParagraphSplitterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "combine-text-lines",
+                                    "name":  "Combine Text Lines",
+                                    "category":  "split",
+                                    "filePath":  "app\\tools\\combine-text-lines\\page.js",
+                                    "widgetName":  "CombineTextLinesTool",
+                                    "widgetFile":  "components\\tools\\widgets\\CombineTextLinesTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-joiner",
+                                    "name":  "Text Joiner",
+                                    "category":  "split",
+                                    "filePath":  "app\\tools\\text-joiner\\page.js",
+                                    "widgetName":  "TextJoinerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextJoinerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "lorem-ipsum-generator",
+                                    "name":  "Lorem Ipsum Generator",
+                                    "category":  "generators",
+                                    "filePath":  "app\\tools\\lorem-ipsum-generator\\page.js",
+                                    "widgetName":  "LoremIpsumGeneratorTool",
+                                    "widgetFile":  "components\\tools\\widgets\\LoremIpsumGeneratorTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "random-word-generator",
+                                    "name":  "Random Word Generator",
+                                    "category":  "generators",
+                                    "filePath":  "app\\tools\\random-word-generator\\page.js",
+                                    "widgetName":  "RandomWordGeneratorTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RandomWordGeneratorTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "random-sentence-generator",
+                                    "name":  "Random Sentence Generator",
+                                    "category":  "generators",
+                                    "filePath":  "app\\tools\\random-sentence-generator\\page.js",
+                                    "widgetName":  "RandomSentenceGeneratorTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RandomSentenceGeneratorTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "random-paragraph-generator",
+                                    "name":  "Random Paragraph Generator",
+                                    "category":  "generators",
+                                    "filePath":  "app\\tools\\random-paragraph-generator\\page.js",
+                                    "widgetName":  "RandomParagraphGeneratorTool",
+                                    "widgetFile":  "components\\tools\\widgets\\RandomParagraphGeneratorTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "prefix-suffix-text-generator",
+                                    "name":  "Prefix Suffix Generator",
+                                    "category":  "generators",
+                                    "filePath":  "app\\tools\\prefix-suffix-text-generator\\page.js",
+                                    "widgetName":  "PrefixSuffixTextGeneratorTool",
+                                    "widgetFile":  "components\\tools\\widgets\\PrefixSuffixTextGeneratorTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-compare-tool",
+                                    "name":  "Text Compare",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\text-compare-tool\\page.js",
+                                    "widgetName":  "TextCompareTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextCompareTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-difference-checker",
+                                    "name":  "Text Difference Checker",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\text-difference-checker\\page.js",
+                                    "widgetName":  "TextDifferenceCheckerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextDifferenceCheckerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "case-sensitive-compare",
+                                    "name":  "Case Sensitive Compare",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\case-sensitive-compare\\page.js",
+                                    "widgetName":  "CaseSensitiveCompareTool",
+                                    "widgetFile":  "components\\tools\\widgets\\CaseSensitiveCompareTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "case-insensitive-compare",
+                                    "name":  "Case Insensitive Compare",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\case-insensitive-compare\\page.js",
+                                    "widgetName":  "CaseInsensitiveCompareTool",
+                                    "widgetFile":  "components\\tools\\widgets\\CaseInsensitiveCompareTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "keyword-density-checker",
+                                    "name":  "Keyword Density Checker",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\keyword-density-checker\\page.js",
+                                    "widgetName":  "KeywordDensityCheckerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\KeywordDensityCheckerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "stop-word-counter",
+                                    "name":  "Stop Word Counter",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\stop-word-counter\\page.js",
+                                    "widgetName":  "StopWordCounterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\StopWordCounterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "readability-checker",
+                                    "name":  "Readability Checker",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\readability-checker\\page.js",
+                                    "widgetName":  "ReadabilityCheckerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ReadabilityCheckerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "sentence-analyzer",
+                                    "name":  "Sentence Analyzer",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\sentence-analyzer\\page.js",
+                                    "widgetName":  "SentenceAnalyzerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\SentenceAnalyzerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-complexity-analyzer",
+                                    "name":  "Text Complexity Analyzer",
+                                    "category":  "analyze",
+                                    "filePath":  "app\\tools\\text-complexity-analyzer\\page.js",
+                                    "widgetName":  "TextComplexityAnalyzerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextComplexityAnalyzerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-masking-tool",
+                                    "name":  "Text Masking Tool",
+                                    "category":  "privacy",
+                                    "filePath":  "app\\tools\\text-masking-tool\\page.js",
+                                    "widgetName":  "TextMaskingTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextMaskingTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-redaction-tool",
+                                    "name":  "Text Redaction Tool",
+                                    "category":  "privacy",
+                                    "filePath":  "app\\tools\\text-redaction-tool\\page.js",
+                                    "widgetName":  "TextRedactionTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextRedactionTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "censor-text-tool",
+                                    "name":  "Censor Text Tool",
+                                    "category":  "privacy",
+                                    "filePath":  "app\\tools\\censor-text-tool\\page.js",
+                                    "widgetName":  "CensorTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\CensorTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "normalize-unicode-text",
+                                    "name":  "Normalize Unicode Text",
+                                    "category":  "privacy",
+                                    "filePath":  "app\\tools\\normalize-unicode-text\\page.js",
+                                    "widgetName":  "NormalizeUnicodeTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\NormalizeUnicodeTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "find-and-replace-text",
+                                    "name":  "Find and Replace",
+                                    "category":  "utilities",
+                                    "filePath":  "app\\tools\\find-and-replace-text\\page.js",
+                                    "widgetName":  "FindAndReplaceTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\FindAndReplaceTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-randomizer",
+                                    "name":  "Text Randomizer",
+                                    "category":  "utilities",
+                                    "filePath":  "app\\tools\\text-randomizer\\page.js",
+                                    "widgetName":  "TextRandomizerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextRandomizerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "shuffle-text-lines",
+                                    "name":  "Shuffle Text Lines",
+                                    "category":  "utilities",
+                                    "filePath":  "app\\tools\\shuffle-text-lines\\page.js",
+                                    "widgetName":  "ShuffleTextLinesTool",
+                                    "widgetFile":  "components\\tools\\widgets\\ShuffleTextLinesTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-tokenizer",
+                                    "name":  "Text Tokenizer",
+                                    "category":  "utilities",
+                                    "filePath":  "app\\tools\\text-tokenizer\\page.js",
+                                    "widgetName":  "TextTokenizerTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextTokenizerTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-validator",
+                                    "name":  "Text Validator",
+                                    "category":  "utilities",
+                                    "filePath":  "app\\tools\\text-validator\\page.js",
+                                    "widgetName":  "TextValidatorTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextValidatorTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-to-speech",
+                                    "name":  "Text to Speech",
+                                    "category":  "audio",
+                                    "filePath":  "app\\tools\\text-to-speech\\page.js",
+                                    "widgetName":  "TextToSpeechTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextToSpeechTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "speech-to-text",
+                                    "name":  "Speech to Text",
+                                    "category":  "audio",
+                                    "filePath":  "app\\tools\\speech-to-text\\page.js",
+                                    "widgetName":  "SpeechToTextTool",
+                                    "widgetFile":  "components\\tools\\widgets\\SpeechToTextTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-to-binary-converter",
+                                    "name":  "Text to Binary",
+                                    "category":  "developer",
+                                    "filePath":  "app\\tools\\text-to-binary-converter\\page.js",
+                                    "widgetName":  "TextToBinaryConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextToBinaryConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "binary-to-text-converter",
+                                    "name":  "Binary to Text",
+                                    "category":  "developer",
+                                    "filePath":  "app\\tools\\binary-to-text-converter\\page.js",
+                                    "widgetName":  "BinaryToTextConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\BinaryToTextConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                },
+                                {
+                                    "slug":  "text-to-ascii-converter",
+                                    "name":  "Text to ASCII",
+                                    "category":  "developer",
+                                    "filePath":  "app\\tools\\text-to-ascii-converter\\page.js",
+                                    "widgetName":  "TextToAsciiConverterTool",
+                                    "widgetFile":  "components\\tools\\widgets\\TextToAsciiConverterTool.js",
+                                    "status":  "Live",
+                                    "notes":  [
+
+                                              ]
+                                }
+                            ],
+    "duplicates":  {
+                       "registrySlugs":  [
+
+                                         ],
+                       "routeSlugs":  [
+
+                                      ],
+                       "widgetNames":  [
+
+                                       ]
+                   },
+    "orphanRoutes":  [
+
+                     ],
+    "unusedWidgets":  {
+
+                      },
+    "emptyToolDirs":  [
+
+                      ]
+}
