@@ -3,9 +3,11 @@ import AdUnit from "@/components/layout/AdUnit";
 import ToolExplorer from "@/components/home/ToolExplorer";
 import ToolCard from "@/components/tools/ToolCard";
 import NewsletterSection from "@/components/home/NewsletterSection";
+import EditorialCard from "@/components/home/EditorialCard";
 import { buildMetadata } from "@/lib/metadata";
 import { tools, getToolBySlug } from "@/lib/tools";
 import { siteConfig, absoluteUrl } from "@/lib/site";
+import { getRecentEditorialItems } from "@/lib/editorial";
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -64,6 +66,7 @@ export default function HomePage() {
     .map((f) => ({ ...f, tool: getToolBySlug(f.slug) }))
     .filter((f) => f.tool);
   const popular = popularSlugs.map(getToolBySlug).filter(Boolean);
+  const editorialItems = getRecentEditorialItems();
 
   return (
     <main>
@@ -193,6 +196,44 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
         <AdUnit slot={siteConfig.adSlots.middle} format="rectangle" />
       </section>
+
+      {editorialItems.length > 0 ? (
+        <section
+          aria-labelledby="editorial-heading"
+          className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+        >
+          <div className="mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent">Editorial</p>
+            <h2
+              id="editorial-heading"
+              className="mt-3 font-heading text-3xl font-bold text-text sm:text-4xl"
+            >
+              Latest reviews &amp; comparisons
+            </h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {editorialItems.map((item) => (
+              <EditorialCard
+                key={item.id}
+                type={item.type}
+                title={item.title}
+                summary={item.summary}
+                publishedAt={item.publishedAt}
+                href={item.href}
+              />
+            ))}
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/reviews"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition hover:text-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+            >
+              See all reviews
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr]">
