@@ -6,6 +6,7 @@ import { normaliseEmail } from "@/lib/newsletter/normalise";
 import { isDisposableEmail } from "@/lib/newsletter/disposable-domains";
 import { generateToken, tokenExpiresAt } from "@/lib/newsletter/tokens";
 import { checkRateLimit } from "@/lib/newsletter/rate-limit";
+import { sendConfirmationEmail } from "@/lib/newsletter/email";
 
 export const dynamic = "force-dynamic";
 
@@ -118,8 +119,10 @@ export async function POST(request) {
           }),
         ]);
 
-        // TODO (Milestone 8): Send confirmation email
-        // await sendConfirmationEmail({ to: existing.email, token: newToken });
+        // Fire-and-forget: DB write succeeded; email failure is recoverable via re-submit (FR-008)
+        sendConfirmationEmail({ to: existing.email, token: newToken }).catch((err) =>
+          console.error("[newsletter/subscribe] confirmation email failed", err)
+        );
 
         return SUCCESS;
       }
@@ -159,8 +162,10 @@ export async function POST(request) {
           }),
         ]);
 
-        // TODO (Milestone 8): Send confirmation email
-        // await sendConfirmationEmail({ to: existing.email, token: newToken });
+        // Fire-and-forget: DB write succeeded; email failure is recoverable via re-submit (FR-010)
+        sendConfirmationEmail({ to: existing.email, token: newToken }).catch((err) =>
+          console.error("[newsletter/subscribe] confirmation email failed", err)
+        );
 
         return SUCCESS;
       }
@@ -195,8 +200,10 @@ export async function POST(request) {
       },
     });
 
-    // TODO (Milestone 8): Send confirmation email
-    // await sendConfirmationEmail({ to: email, token: newToken });
+    // Fire-and-forget: DB write succeeded; email failure is recoverable via re-submit (new subscriber)
+    sendConfirmationEmail({ to: email, token: newToken }).catch((err) =>
+      console.error("[newsletter/subscribe] confirmation email failed", err)
+    );
 
     return SUCCESS;
   } catch (error) {
