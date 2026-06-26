@@ -46,7 +46,7 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Popular tools</p>
             <ul className="mt-4 grid gap-3">
               {popularSlugs
-                .map((slug) => tools.find((t) => t.slug === slug))
+                .map((slug) => tools.find((tool) => tool.slug === slug))
                 .filter(Boolean)
                 .map((tool) => (
                   <li key={tool.slug}>
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-slate-700/60 pt-6 text-sm text-slate-500">
-          © 2026 Toolkno.com — Free Online Text Tools
+          &copy; 2026 Toolkno.com &mdash; Free Online Text Tools
         </div>
       </div>
     </footer>

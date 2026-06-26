@@ -57,41 +57,50 @@ export default function BillingCard({ plan, planExpiresAt, email, name }) {
         description: cycle === "yearly" ? "Toolkno Pro Yearly" : "Toolkno Pro Monthly",
         order_id: orderData.orderId,
         handler: async function (response) {
-          const verifyResponse = await fetch("/api/payment/verify", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              razorpayOrderId: response.razorpay_order_id,
-              razorpayPaymentId: response.razorpay_payment_id,
-              razorpaySignature: response.razorpay_signature
-            })
-          });
+          try {
+            const verifyResponse = await fetch("/api/payment/verify", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                razorpayOrderId: response.razorpay_order_id,
+                razorpayPaymentId: response.razorpay_payment_id,
+                razorpaySignature: response.razorpay_signature
+              })
+            });
 
-          const verifyData = await verifyResponse.json();
-          if (!verifyResponse.ok || !verifyData.success) {
-            throw new Error(verifyData.error || "Payment verification failed.");
+            const verifyData = await verifyResponse.json();
+            if (!verifyResponse.ok || !verifyData.success) {
+              throw new Error(verifyData.error || "Payment verification failed.");
+            }
+
+            const upgradeResponse = await fetch("/api/user/upgrade", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                orderId: response.razorpay_order_id,
+                paymentId: response.razorpay_payment_id
+              })
+            });
+
+            const upgradeData = await upgradeResponse.json();
+            if (!upgradeResponse.ok) {
+              throw new Error(upgradeData.error || "Upgrade failed after payment.");
+            }
+
+            window.location.href = "/dashboard?upgraded=true";
+          } catch (error) {
+            setMessage(error.message || "Payment processing failed.");
+            setLoading(false);
           }
-
-          const upgradeResponse = await fetch("/api/user/upgrade", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              cycle,
-              orderId: response.razorpay_order_id,
-              paymentId: response.razorpay_payment_id
-            })
-          });
-
-          const upgradeData = await upgradeResponse.json();
-          if (!upgradeResponse.ok) {
-            throw new Error(upgradeData.error || "Upgrade failed after payment.");
+        },
+        modal: {
+          ondismiss: () => {
+            setLoading(false);
           }
-
-          window.location.href = "/dashboard?upgraded=true";
         },
         prefill: {
           name,
@@ -104,8 +113,7 @@ export default function BillingCard({ plan, planExpiresAt, email, name }) {
 
       razorpay.open();
     } catch (error) {
-      setMessage(error.message);
-    } finally {
+      setMessage(error.message || "Unable to start checkout.");
       setLoading(false);
     }
   }
@@ -132,14 +140,14 @@ export default function BillingCard({ plan, planExpiresAt, email, name }) {
           className={`rounded-3xl border px-4 py-4 text-left transition ${cycle === "monthly" ? "border-accent bg-accent/10" : "border-slate-200 bg-slate-50"}`}
         >
           <p className="text-sm font-semibold text-text">Monthly</p>
-          <p className="mt-1 text-sm text-muted">₹199 / month</p>
+          <p className="mt-1 text-sm text-muted">Rs. 199 / month</p>
         </button>
         <button
           onClick={() => setCycle("yearly")}
           className={`rounded-3xl border px-4 py-4 text-left transition ${cycle === "yearly" ? "border-accent bg-accent/10" : "border-slate-200 bg-slate-50"}`}
         >
           <p className="text-sm font-semibold text-text">Yearly</p>
-          <p className="mt-1 text-sm text-muted">₹1499 / year</p>
+          <p className="mt-1 text-sm text-muted">Rs. 1499 / year</p>
         </button>
       </div>
 

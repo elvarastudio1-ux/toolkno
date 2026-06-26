@@ -39,7 +39,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "Invalid payment signature." }, { status: 400 });
     }
 
-    await prisma.payment.updateMany({
+    const updatedPayment = await prisma.payment.updateMany({
       where: {
         userId: session.user.id,
         razorpayOrderId
@@ -49,6 +49,10 @@ export async function POST(request) {
         status: "success"
       }
     });
+
+    if (!updatedPayment.count) {
+      return NextResponse.json({ error: "Payment order was not found." }, { status: 404 });
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

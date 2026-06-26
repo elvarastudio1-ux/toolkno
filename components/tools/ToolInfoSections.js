@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getToolContent } from "@/lib/tools";
 
 export default function ToolInfoSections({ slug }) {
@@ -7,7 +8,6 @@ export default function ToolInfoSections({ slug }) {
 
   return (
     <div className="space-y-10">
-      {/* What is / Intro */}
       <section className="rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
         <h2 className="font-heading text-3xl font-bold text-text">What is {tool.name}?</h2>
         <div className="mt-6 space-y-4 text-sm leading-8 text-muted">
@@ -17,7 +17,6 @@ export default function ToolInfoSections({ slug }) {
         </div>
       </section>
 
-      {/* How to use */}
       <section className="rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
         <h2 className="font-heading text-3xl font-bold text-text">How to use {tool.name}</h2>
         <p className="mt-2 text-sm text-muted">Four steps. No setup, no signup.</p>
@@ -31,7 +30,6 @@ export default function ToolInfoSections({ slug }) {
         </ol>
       </section>
 
-      {/* Example */}
       {tool.example ? (
         <section className="rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
           <h2 className="font-heading text-3xl font-bold text-text">Example</h2>
@@ -49,14 +47,15 @@ export default function ToolInfoSections({ slug }) {
         </section>
       ) : null}
 
-      {/* Benefits */}
       {tool.benefits && tool.benefits.length ? (
         <section className="rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
           <h2 className="font-heading text-3xl font-bold text-text">Why {tool.name} is useful</h2>
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {tool.benefits.map((benefit) => (
               <li key={benefit} className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">✓</span>
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">
+                  &#10003;
+                </span>
                 <p className="text-sm leading-6 text-slate-700">{benefit}</p>
               </li>
             ))}
@@ -64,7 +63,28 @@ export default function ToolInfoSections({ slug }) {
         </section>
       ) : null}
 
-      {/* FAQ */}
+      {tool.contextualTools && tool.contextualTools.length ? (
+        <section className="rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
+          <h2 className="font-heading text-3xl font-bold text-text">Use this with</h2>
+          <p className="mt-2 text-sm text-muted">
+            These related tools usually come next in the same workflow.
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {tool.contextualTools.map((relatedTool) => (
+              <Link
+                key={relatedTool.slug}
+                href={`/tools/${relatedTool.slug}`}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-sky-400 hover:bg-white"
+              >
+                <p className="text-sm font-semibold text-text">{relatedTool.name}</p>
+                <p className="mt-2 text-sm leading-6 text-muted">{relatedTool.description}</p>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-sky-600">Open tool</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="rounded-[2rem] border border-slate-200 bg-surface p-6 sm:p-8">
         <h2 className="font-heading text-3xl font-bold text-text">Common questions</h2>
         <div className="mt-6 space-y-4">
@@ -83,7 +103,7 @@ export default function ToolInfoSections({ slug }) {
       </section>
 
       <p className="text-center text-xs text-slate-400">
-        Last reviewed: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })} · Free, browser-based, no signup.
+        Last reviewed: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })} &middot; Free, browser-based, no signup.
       </p>
     </div>
   );

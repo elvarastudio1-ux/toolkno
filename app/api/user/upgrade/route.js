@@ -3,8 +3,15 @@ import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { resend } from "@/lib/resend";
 import { getExpiryDate } from "@/lib/subscription";
+import { siteConfig } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
+
+function getBillingCycleFromAmount(amount) {
+  if (amount === siteConfig.plans.proYearly.amount) return "yearly";
+  if (amount === siteConfig.plans.proMonthly.amount) return "monthly";
+  return null;
+}
 
 export async function POST(request) {
   try {
@@ -14,31 +21,54 @@ export async function POST(request) {
       return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
     }
 
-    const { cycle, orderId, paymentId } = await request.json();
+    const { orderId, paymentId } = await request.json();
 
-    if (!orderId) {
-      return NextResponse.json({ error: "Order ID is required." }, { status: 400 });
+    if (!orderId || !paymentId) {
+      return NextResponse.json({ error: "Order ID and payment ID are required." }, { status: 400 });
     }
 
-    const planExpiresAt = getExpiryDate(cycle === "yearly" ? "yearly" : "monthly");
-
-    const user = await prisma.user.update({
-      where: { id: session.user.id },
-      data: {
-        plan: "paid",
-        planExpiresAt
-      }
-    });
-
-    await prisma.payment.updateMany({
+    const payment = await prisma.payment.findFirst({
       where: {
         userId: session.user.id,
         razorpayOrderId: orderId
-      },
-      data: {
-        razorpayPaymentId: paymentId || null,
-        status: "success"
       }
+    });
+
+    if (!payment) {
+      return NextResponse.json({ error: "Payment order not found." }, { status: 404 });
+    }
+
+    if (payment.status !== "success") {
+      return NextResponse.json({ error: "Payment has not been verified yet." }, { status: 400 });
+    }
+
+    if (payment.razorpayPaymentId && payment.razorpayPaymentId !== paymentId) {
+      return NextResponse.json({ error: "Payment ID mismatch." }, { status: 400 });
+    }
+
+    const cycle = getBillingCycleFromAmount(payment.amount);
+    if (!cycle) {
+      return NextResponse.json({ error: "Unsupported payment amount." }, { status: 400 });
+    }
+
+    const planExpiresAt = getExpiryDate(cycle);
+
+    const user = await prisma.$transaction(async (tx) => {
+      await tx.payment.update({
+        where: { razorpayOrderId: orderId },
+        data: {
+          razorpayPaymentId: paymentId,
+          status: "success"
+        }
+      });
+
+      return tx.user.update({
+        where: { id: session.user.id },
+        data: {
+          plan: "paid",
+          planExpiresAt
+        }
+      });
     });
 
     try {
