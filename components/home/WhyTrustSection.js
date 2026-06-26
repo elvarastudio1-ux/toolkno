@@ -50,7 +50,7 @@ export default function WhyTrustSection({
 
       <div className="mt-6">
         <Link
-          href="/about#editorial-methodology"
+          href="/methodology"
           className="inline-flex items-center text-sm font-semibold text-sky-600 transition hover:text-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
         >
           Learn about our editorial methodology
