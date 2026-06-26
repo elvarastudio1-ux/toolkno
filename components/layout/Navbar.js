@@ -3,17 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import HeaderSearch from "@/components/layout/HeaderSearch";
 
 const navLinks = [
-  { href: "/", label: "Home", matchers: ["/"] },
-  { href: "/tools", label: "All Tools", matchers: ["/tools"] },
-  { href: "/pricing", label: "Pricing", matchers: ["/pricing"] }
+  { href: "/tools", label: "Tools", matchers: ["/tools"] },
+  { href: "/pricing", label: "Pricing", matchers: ["/pricing"] },
+  { href: "/about", label: "About", matchers: ["/about"] }
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   function isActiveLink(link) {
     return link.matchers.some((matcher) => pathname === matcher || pathname.startsWith(`${matcher}/`));
@@ -49,10 +51,10 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <HeaderSearch />
           <Link
-            href="/tools"
-            className="inline-flex h-10 items-center justify-center rounded-lg bg-green-500 px-4 text-sm font-semibold text-white transition hover:bg-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+            href={session ? "/dashboard" : "/login"}
+            className="inline-flex h-10 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition hover:border-sky-500 hover:text-sky-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
           >
-            Get Started Free
+            {session ? "Dashboard" : "Login"}
           </Link>
         </div>
 
@@ -86,11 +88,11 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/tools"
+              href={session ? "/dashboard" : "/login"}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex h-10 items-center justify-center rounded-lg bg-green-500 px-4 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+              className="mt-2 inline-flex h-10 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
             >
-              Get Started Free
+              {session ? "Dashboard" : "Login"}
             </Link>
           </nav>
         </div>
