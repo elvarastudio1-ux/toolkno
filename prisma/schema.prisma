@@ -96,6 +96,7 @@ model Subscriber {
 
   tokens SubscriberToken[]
   events SubscriberEvent[]
+  sends  NewsletterSend[]
 }
 
 model SubscriberToken {
@@ -132,6 +133,67 @@ model RateLimitEntry {
   @@index([expiresAt])
 }
 
+model NewsletterIssue {
+  id           String        @id @default(cuid())
+  issueNumber  Int           @unique @default(autoincrement())
+  slug         String        @unique
+  subject      String
+  preheader    String?
+  htmlContent  String        @db.Text
+  textContent  String        @db.Text
+  status       IssueStatus   @default(draft)
+  audienceType AudienceType  @default(all_confirmed)
+  scheduledAt  DateTime?
+  sentAt       DateTime?
+  sentCount    Int           @default(0)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  sends NewsletterSend[]
+}
+
+model NewsletterSend {
+  id              String           @id @default(cuid())
+  issueId         String
+  issue           NewsletterIssue  @relation(fields: [issueId], references: [id], onDelete: Cascade)
+  subscriberId    String
+  subscriber      Subscriber       @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+  emailSnapshot   String
+  status          SendStatus       @default(pending)
+  resendMessageId String?
+  sentAt          DateTime?
+  openedAt        DateTime?
+  lastOpenedAt    DateTime?
+  openCount       Int              @default(0)
+  clickedAt       DateTime?
+  bouncedAt       DateTime?
+  complainedAt    DateTime?
+  failedAt        DateTime?
+  failureReason   String?
+  createdAt       DateTime         @default(now())
+
+  clicks NewsletterClick[]
+
+  @@unique([issueId, subscriberId])
+  @@index([issueId])
+  @@index([subscriberId])
+  @@index([resendMessageId])
+  @@index([status])
+}
+
+model NewsletterClick {
+  id            String         @id @default(cuid())
+  sendId        String
+  send          NewsletterSend @relation(fields: [sendId], references: [id], onDelete: Cascade)
+  url           String
+  clickedAt     DateTime       @default(now())
+  ipAddressHash String?
+  userAgent     String?
+
+  @@index([sendId])
+  @@index([url])
+}
+
 // ─── Enums ────────────────────────────────────────────────────────────────────
 
 enum SubscriberStatus {
@@ -153,4 +215,27 @@ enum TokenType {
   unsubscribe
   resubscribe
   management
+}
+
+enum IssueStatus {
+  draft
+  scheduled
+  sending
+  sent
+  cancelled
+}
+
+enum AudienceType {
+  all_confirmed
+  segment
+}
+
+enum SendStatus {
+  pending
+  sent
+  opened
+  clicked
+  bounced
+  complained
+  failed
 }
