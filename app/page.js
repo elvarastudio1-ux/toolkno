@@ -4,7 +4,33 @@ import ToolExplorer from "@/components/home/ToolExplorer";
 import ToolCard from "@/components/tools/ToolCard";
 import { buildMetadata } from "@/lib/metadata";
 import { tools, getToolBySlug } from "@/lib/tools";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, absoluteUrl } from "@/lib/site";
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ToolKno",
+  url: "https://toolkno.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://toolkno.com/tools?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ToolKno",
+  url: "https://toolkno.com",
+  logo: {
+    "@type": "ImageObject",
+    url: absoluteUrl(siteConfig.socialImage)
+  }
+};
 
 export function generateMetadata() {
   return buildMetadata({
@@ -40,6 +66,15 @@ export default function HomePage() {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+
       <section className="mx-auto max-w-7xl px-4 pb-8 pt-12 sm:px-6 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-12">
           <span className="inline-flex items-center rounded-full border border-green-200 bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
