@@ -30,6 +30,7 @@ export default function NewsletterSignup({ source = "homepage" }) {
   const [subscribed, setSubscribed] = useState(false);
   const sectionRef = useRef(null);
   const impressionFiredRef = useRef(false);
+  const interactionFiredRef = useRef(false);
 
   // Cookie check runs client-side after hydration (NF-003 — brief flash of form is acceptable)
   useEffect(() => {
@@ -127,7 +128,13 @@ export default function NewsletterSignup({ source = "homepage" }) {
                 type="email"
                 autoComplete="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  if (!interactionFiredRef.current) {
+                    interactionFiredRef.current = true;
+                    track(EVENTS.NEWSLETTER_INTERACTION);
+                  }
+                  setEmail(e.target.value);
+                }}
                 placeholder="Enter your email"
                 aria-describedby="newsletter-error"
                 aria-invalid={error ? "true" : "false"}

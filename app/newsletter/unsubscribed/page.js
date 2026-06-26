@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
+import UnsubscribeTracker from "@/components/newsletter/UnsubscribeTracker";
+import ResubscribeLink from "@/components/newsletter/ResubscribeLink";
 
 export function generateMetadata() {
   return buildMetadata({
@@ -97,13 +99,9 @@ export default async function UnsubscribedPage({ searchParams }) {
           <p className="mt-3 text-sm leading-6 text-slate-500">
             Changed your mind? You can resubscribe at any time.
           </p>
+          <UnsubscribeTracker />
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Link
-              href="/#newsletter"
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-sky-500 px-5 text-sm font-semibold text-white transition hover:bg-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-            >
-              Resubscribe
-            </Link>
+            <ResubscribeLink className="inline-flex h-11 items-center justify-center rounded-lg bg-sky-500 px-5 text-sm font-semibold text-white transition hover:bg-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2" />
             <Link
               href="/"
               className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-200 px-5 text-sm font-semibold text-slate-700 transition hover:border-sky-400 hover:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
