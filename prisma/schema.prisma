@@ -7,6 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ─── Auth models ──────────────────────────────────────────────────────────────
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -15,6 +17,7 @@ model User {
   image         String?
   plan          String    @default("free")
   planExpiresAt DateTime?
+  role          String    @default("user")
   createdAt     DateTime  @default(now())
   accounts      Account[]
   sessions      Session[]
@@ -65,4 +68,89 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// ─── Newsletter models ────────────────────────────────────────────────────────
+
+model Subscriber {
+  id              String           @id @default(cuid())
+  email           String           @unique
+  emailNormalized String           @unique
+  status          SubscriberStatus @default(pending)
+  source          String
+  frequency       EmailFrequency   @default(every_issue)
+  subscribedAt    DateTime         @default(now())
+  confirmedAt     DateTime?
+  unsubscribedAt  DateTime?
+  bouncedAt       DateTime?
+  complainedAt    DateTime?
+  lastOpenedAt    DateTime?
+  lastClickedAt   DateTime?
+  openCount       Int              @default(0)
+  clickCount      Int              @default(0)
+  issuesReceived  Int              @default(0)
+  ipAddressHash   String?
+  userAgent       String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  tokens SubscriberToken[]
+  events SubscriberEvent[]
+}
+
+model SubscriberToken {
+  id           String     @id @default(cuid())
+  subscriberId String
+  subscriber   Subscriber @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+  token        String     @unique
+  type         TokenType
+  expiresAt    DateTime?
+  usedAt       DateTime?
+  createdAt    DateTime   @default(now())
+}
+
+model SubscriberEvent {
+  id             String            @id @default(cuid())
+  subscriberId   String
+  subscriber     Subscriber        @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+  eventType      String
+  previousStatus SubscriberStatus?
+  newStatus      SubscriberStatus?
+  metadata       Json?
+  actor          String
+  createdAt      DateTime          @default(now())
+}
+
+model RateLimitEntry {
+  id          String   @id @default(cuid())
+  key         String
+  attempts    Int      @default(1)
+  windowStart DateTime @default(now())
+  expiresAt   DateTime
+
+  @@index([key])
+  @@index([expiresAt])
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum SubscriberStatus {
+  pending
+  confirmed
+  unsubscribed
+  bounced
+  complained
+  inactive
+}
+
+enum EmailFrequency {
+  every_issue
+  digest_only
+}
+
+enum TokenType {
+  confirmation
+  unsubscribe
+  resubscribe
+  management
 }
