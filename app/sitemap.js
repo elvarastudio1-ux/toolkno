@@ -1,11 +1,16 @@
 import { getAllCategorySlugs, tools } from "@/lib/tools";
+import { getPublishedReviews } from "@/lib/reviews/data";
 
 // Stable dates — update SITE_UPDATED whenever content meaningfully changes.
 // Using new Date() here would report every page as modified today on every request.
 const SITE_UPDATED = new Date("2026-06-25");
 const LEGAL_UPDATED = new Date("2025-06-01");
 
-export default function sitemap() {
+// ISR safety window so newly published reviews appear without a redeploy;
+// M17 adds on-demand revalidation on publish.
+export const revalidate = 3600;
+
+export default async function sitemap() {
   const baseUrl = "https://toolkno.com";
 
   const toolPages = tools.map((tool) => ({
@@ -34,6 +39,12 @@ export default function sitemap() {
       lastModified: SITE_UPDATED,
       changeFrequency: "daily",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/reviews`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/newsletter`,
@@ -97,5 +108,15 @@ export default function sitemap() {
     },
   ];
 
-  return [...staticPages, ...categoryPages, ...toolPages];
+  // Published reviews only — never drafts/archived (query filters by status).
+  // DB-resilient: returns [] when DATABASE_URL is unavailable (e.g. local build).
+  const reviews = await getPublishedReviews();
+  const reviewPages = reviews.map((review) => ({
+    url: `${baseUrl}/reviews/${review.slug}`,
+    lastModified: review.updatedAt ?? SITE_UPDATED,
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...toolPages, ...reviewPages];
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import ProseSection from "@/components/editorial/ProseSection";
 import AffiliateDisclosure from "@/components/reviews/AffiliateDisclosure";
+import ReviewSchemaScripts from "@/components/reviews/ReviewSchemaScripts";
 import { getPublishedReviewBySlug, getPublishedReviewSlugs } from "@/lib/reviews/data";
 
 // Static generation from the DB + on-demand ISR (PRD-003 PERF-001).
@@ -79,6 +80,7 @@ export default async function ReviewPage({ params }) {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <ReviewSchemaScripts review={review} />
       <article className="space-y-6">
         {/* ── Header / verdict (above the fold) ────────────────────────────── */}
         <header className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10">
