@@ -2,6 +2,7 @@ import Link from "next/link";
 import AdUnit from "@/components/layout/AdUnit";
 import ToolExplorer from "@/components/home/ToolExplorer";
 import ToolCard from "@/components/tools/ToolCard";
+import NewsletterSection from "@/components/home/NewsletterSection";
 import { buildMetadata } from "@/lib/metadata";
 import { tools, getToolBySlug } from "@/lib/tools";
 import { siteConfig, absoluteUrl } from "@/lib/site";
@@ -122,6 +123,8 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AdUnit slot={siteConfig.adSlots.hero} format="horizontal" />
       </section>
+
+      <NewsletterSection />
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-6">
