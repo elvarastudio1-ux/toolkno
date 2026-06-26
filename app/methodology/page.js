@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { siteConfig, absoluteUrl } from "@/lib/site";
+import ProseSection from "@/components/editorial/ProseSection";
 
 const METHODOLOGY_VERSION = "1.0.0";
 const METHODOLOGY_UPDATED_ISO = "2026-06-26";
@@ -107,29 +108,6 @@ const versionHistory = [
   ["1.0.0", METHODOLOGY_UPDATED_LABEL, "Initial public methodology published."],
 ];
 
-function Card({ id, eyebrow, title, children }) {
-  const headingId = `${id}-heading`;
-  return (
-    <section
-      aria-labelledby={headingId}
-      className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8"
-    >
-      {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-600">
-          {eyebrow}
-        </p>
-      ) : null}
-      <h2
-        id={headingId}
-        className="mt-3 font-heading text-2xl font-bold text-slate-900 sm:text-3xl"
-      >
-        {title}
-      </h2>
-      <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600">{children}</div>
-    </section>
-  );
-}
-
 export default function MethodologyPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -170,7 +148,7 @@ export default function MethodologyPage() {
         </header>
 
         {/* ── Editorial philosophy ─────────────────────────────────────────── */}
-        <Card id="philosophy" eyebrow="Why we publish" title="Editorial philosophy">
+        <ProseSection id="philosophy" eyebrow="Why we publish" title="Editorial philosophy">
           <p>
             ToolKno publishes editorial content in three formats: reviews, comparisons, and
             buying guides. Every piece exists to help a specific reader make a specific decision.
@@ -182,10 +160,10 @@ export default function MethodologyPage() {
             shallow coverage of twenty. We would rather publish nothing in a given period than
             publish something we have not genuinely tested.
           </p>
-        </Card>
+        </ProseSection>
 
         {/* ── Testing methodology ──────────────────────────────────────────── */}
-        <Card id="testing" eyebrow="How we test" title="Testing methodology">
+        <ProseSection id="testing" eyebrow="How we test" title="Testing methodology">
           <p>Every review moves through the same process, in this order:</p>
           <ol className="ml-5 list-decimal space-y-3">
             <li>
@@ -222,10 +200,10 @@ export default function MethodologyPage() {
               audited every 12 months, or within 30 days of a major product change.
             </li>
           </ol>
-        </Card>
+        </ProseSection>
 
         {/* ── Evaluation criteria ──────────────────────────────────────────── */}
-        <Card id="criteria" eyebrow="What we evaluate" title="Evaluation criteria">
+        <ProseSection id="criteria" eyebrow="What we evaluate" title="Evaluation criteria">
           <p>
             Reviews and comparisons evaluate the same core criteria. Each is assessed from
             testing evidence, not from the vendor&rsquo;s specification sheet.
@@ -255,10 +233,10 @@ export default function MethodologyPage() {
               </tbody>
             </table>
           </div>
-        </Card>
+        </ProseSection>
 
         {/* ── Criteria weighting ───────────────────────────────────────────── */}
-        <Card id="weighting" eyebrow="How we weight" title="Criteria weighting">
+        <ProseSection id="weighting" eyebrow="How we weight" title="Criteria weighting">
           <p>
             ToolKno does not apply a single fixed weighting to every product. Criteria are
             weighted by their relevance to the specific decision a review or comparison serves.
@@ -271,10 +249,10 @@ export default function MethodologyPage() {
             A verdict that does not explain what it weighted, and why, is not a finished verdict.
             &ldquo;It depends&rdquo; without saying what it depends on is not a verdict at all.
           </p>
-        </Card>
+        </ProseSection>
 
         {/* ── Testing periods ──────────────────────────────────────────────── */}
-        <Card id="periods" eyebrow="How long we test" title="Testing periods">
+        <ProseSection id="periods" eyebrow="How long we test" title="Testing periods">
           <p>
             These are minimums, not targets. &ldquo;Active use&rdquo; means using the product to
             accomplish real work, not exploring its interface.
@@ -308,10 +286,10 @@ export default function MethodologyPage() {
               </tbody>
             </table>
           </div>
-        </Card>
+        </ProseSection>
 
         {/* ── Evidence standards ───────────────────────────────────────────── */}
-        <Card id="evidence" eyebrow="What counts as proof" title="Evidence standards">
+        <ProseSection id="evidence" eyebrow="What counts as proof" title="Evidence standards">
           <p>
             Every claim in a published article rests on exactly one of four kinds of evidence:
           </p>
@@ -332,10 +310,10 @@ export default function MethodologyPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </Card>
+        </ProseSection>
 
         {/* ── Editorial independence ───────────────────────────────────────── */}
-        <Card id="independence" eyebrow="Who decides" title="Editorial independence">
+        <ProseSection id="independence" eyebrow="Who decides" title="Editorial independence">
           <p>
             The editor makes every editorial decision. No vendor has approval rights over a review
             of their product, before or after publication. No affiliate manager can request
@@ -351,10 +329,10 @@ export default function MethodologyPage() {
             corrected and documented. The verdict itself is not changed by vendor communication
             unless the testing evidence independently supports a change.
           </p>
-        </Card>
+        </ProseSection>
 
         {/* ── Affiliate disclosure ─────────────────────────────────────────── */}
-        <Card id="affiliate-disclosure" eyebrow="How we disclose" title="Affiliate disclosure policy">
+        <ProseSection id="affiliate-disclosure" eyebrow="How we disclose" title="Affiliate disclosure policy">
           <p>
             ToolKno earns affiliate commissions on some links. Disclosure is never buried in a
             footer or a generic policy page. It appears twice in every article that contains
@@ -383,10 +361,10 @@ export default function MethodologyPage() {
             If either disclosure is missing, the article does not ship. The commission rate on a
             product never changes its editorial position.
           </p>
-        </Card>
+        </ProseSection>
 
         {/* ── Conflict of interest ─────────────────────────────────────────── */}
-        <Card id="conflicts" eyebrow="How we stay honest" title="Conflict-of-interest handling">
+        <ProseSection id="conflicts" eyebrow="How we stay honest" title="Conflict-of-interest handling">
           <p>
             Affiliate revenue creates an obvious incentive to favour the products that pay the
             most. We manage that conflict structurally rather than relying on good intentions:
@@ -405,10 +383,20 @@ export default function MethodologyPage() {
               whether content is true and useful first; whether it can be monetised second.
             </li>
           </ul>
-        </Card>
+          <p>
+            Every affiliate relationship we hold is listed publicly in our{" "}
+            <Link
+              href="/affiliate-registry"
+              className="font-semibold text-sky-600 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+            >
+              affiliate registry
+            </Link>
+            .
+          </p>
+        </ProseSection>
 
         {/* ── Update policy ────────────────────────────────────────────────── */}
-        <Card id="updates" eyebrow="How we keep it current" title="Update policy">
+        <ProseSection id="updates" eyebrow="How we keep it current" title="Update policy">
           <p>
             A review is a living document. Published content is revisited when any of the
             following happens:
@@ -442,10 +430,10 @@ export default function MethodologyPage() {
               </tbody>
             </table>
           </div>
-        </Card>
+        </ProseSection>
 
         {/* ── Corrections ──────────────────────────────────────────────────── */}
-        <Card id="corrections" eyebrow="When we get it wrong" title="Corrections policy">
+        <ProseSection id="corrections" eyebrow="When we get it wrong" title="Corrections policy">
           <p>
             A factual error found by a reader or by self-audit is corrected within 24 hours and
             noted in the article&rsquo;s Update History. The notice reads: &ldquo;Correction,
@@ -458,10 +446,10 @@ export default function MethodologyPage() {
             publication date is preserved so readers who relied on the old verdict can see exactly
             what changed and when.
           </p>
-        </Card>
+        </ProseSection>
 
         {/* ── Version history ──────────────────────────────────────────────── */}
-        <Card id="version-history" eyebrow="What changed here" title="Version history">
+        <ProseSection id="version-history" eyebrow="What changed here" title="Version history">
           <p>
             This methodology is version-controlled. When it changes, every published review is
             re-evaluated against the new version.
@@ -495,7 +483,7 @@ export default function MethodologyPage() {
               </tbody>
             </table>
           </div>
-        </Card>
+        </ProseSection>
 
         {/* ── Footer links ─────────────────────────────────────────────────── */}
         <section

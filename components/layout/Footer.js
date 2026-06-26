@@ -7,6 +7,7 @@ const footerLinks = [
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/methodology", label: "Methodology" },
+  { href: "/affiliate-registry", label: "Affiliate Registry" },
   { href: "/contact", label: "Contact" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-and-conditions", label: "Terms" },
