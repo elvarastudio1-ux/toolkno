@@ -12,6 +12,11 @@ import { tools, getToolBySlug } from "@/lib/tools";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 import { getRecentEditorialItems } from "@/lib/editorial";
 
+// ISR: the homepage is statically rendered and revalidated hourly so newly
+// published reviews surface in the editorial section without a redeploy. All
+// other homepage data is static; M17 adds on-demand revalidation on publish.
+export const revalidate = 3600;
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -64,12 +69,12 @@ const popularSlugs = [
   "text-to-binary-converter"
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
   const featured = featuredSlugs
     .map((f) => ({ ...f, tool: getToolBySlug(f.slug) }))
     .filter((f) => f.tool);
   const popular = popularSlugs.map(getToolBySlug).filter(Boolean);
-  const editorialItems = getRecentEditorialItems();
+  const editorialItems = await getRecentEditorialItems();
 
   return (
     <main>
